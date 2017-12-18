@@ -99,16 +99,6 @@
      </property>
     </spacer>
    </item>
-   <item>
-    <widget class="QPushButton" name="allCreaturesB">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string>ALL_CREATURES</string>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <resources/>

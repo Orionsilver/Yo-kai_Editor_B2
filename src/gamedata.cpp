@@ -6,19 +6,19 @@
 
 GameData::GameData()
 {
-    this->availableData << "creature"
-                        << "consume"
-                        << "equipment"
-                        << "important"
-                        << "soul"
+    this->availableData << "consume"
+                        << "hackslash_battle"
+                        << "hackslash_baura"
+                        << "hackslash_consume"
+                        << "hackslash_equipment"
+                        << "hackslash_important"
+                        << "hackslash_ogreball"
+                        << "hackslash_technic"
+                        << "hackslash_treasure_jewel"
+                        << "hidden_treasure"
+                        << "item_hackslash"
                         << "youkai"
-                        << "ai"
-                        << "youkaiNum"
-                        << "flags"
-                        << "map"
-                        << "hackslash"
-                        << "busters_equipment"
-                        << "busters_hidden_treasure";
+                        << "youkaiNum";
     foreach (QString s, this->availableData) {
         QFile f(QString(":/data/data/%1.xml").arg(s));
         QFile g(QString(":/data/data/%1_%2.xml").arg(s).arg(QLocale().name()));
@@ -48,14 +48,23 @@ GameData::GameData()
         }
     }
 
-    this->availableJsonData << "gashaData"
-                            << "trophy";
-    foreach (QString s, this->availableJsonData) {
+    this->availableJsonArrayData << "gashaData"
+                                 << "trophy";
+    foreach (QString s, this->availableJsonArrayData) {
         QFile f(QString(":/data/data/%1.json").arg(s));
         if (f.open(QIODevice::ReadOnly)) {
             QByteArray data = f.readAll();
             QJsonDocument doc = QJsonDocument::fromJson(data);
-            this->jsonData[s] = doc.array();
+            this->jsonArrayData[s] = doc.array();
+        }
+    }
+    this->availableJsonObjectData << "technic";
+    foreach (QString s, this->availableJsonObjectData) {
+        QFile f(QString(":/data/data/%1.json").arg(s));
+        if (f.open(QIODevice::ReadOnly)) {
+            QByteArray data = f.readAll();
+            QJsonDocument doc = QJsonDocument::fromJson(data);
+            this->jsonObjectData[s] = doc.object();
         }
     }
 }
@@ -69,7 +78,12 @@ const QList<dataentry_t>& GameData::getData(const QString& s)
     return this->data[s];
 }
 
-const QJsonArray& GameData::getJSONData(const QString& s)
+const QJsonArray& GameData::getJSONArrayData(const QString& s)
 {
-    return this->jsonData[s];
+    return this->jsonArrayData[s];
+}
+
+const QJsonObject& GameData::getJSONObjectData(const QString& s)
+{
+    return this->jsonObjectData[s];
 }

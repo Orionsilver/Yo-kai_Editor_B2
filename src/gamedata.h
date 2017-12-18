@@ -21,13 +21,16 @@ public:
         return instance;
     }
     const QList<dataentry_t>& getData(const QString& s);
-    const QJsonArray& getJSONData(const QString& s);
+    const QJsonArray& getJSONArrayData(const QString& s);
+    const QJsonObject& getJSONObjectData(const QString& s);
 
 private:
     QHash<QString, QList<dataentry_t> > data;
-    QHash<QString, QJsonArray> jsonData;
+    QHash<QString, QJsonArray> jsonArrayData;
+    QHash<QString, QJsonObject> jsonObjectData;
     QStringList availableData;
-    QStringList availableJsonData;
+    QStringList availableJsonArrayData;
+    QStringList availableJsonObjectData;
 };
 
 #endif // GAMEDATA_H

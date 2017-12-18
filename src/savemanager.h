@@ -6,7 +6,6 @@
 #include "ccmcipher.h"
 #include "crc32.h"
 #include "error.h"
-#include "gameconfig.h"
 #include "section.h"
 #include "ywcipher.h"
 #include <QTreeWidget>

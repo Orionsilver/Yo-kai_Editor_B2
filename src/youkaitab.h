@@ -23,7 +23,7 @@ public slots:
     void updateYoukaiCount();
     void updateID();
     void fixIVs();
-    void allWinPoses();
+    void loadDefaultAttacks();
 
 private:
     Ui::YoukaiTabForm* form;

@@ -1,4 +1,4 @@
 Yo-kai Editor B2 - togenyan
 
-v0.1 2017-12-xx
+v0.1 2017-12-18
 初版

@@ -12,7 +12,7 @@ GashaTab::GashaTab(SaveManager* mgr, QWidget* parent, int sectionId)
     , st(new GashaState())
 {
     ui->setupUi(this);
-    QJsonArray gashaArray = GameData::getInstance().getJSONData("gashaData");
+    QJsonArray gashaArray = GameData::getInstance().getJSONArrayData("gashaData");
     int i = 0;
     ui->gashaTable->setHorizontalHeaderItem(0, new QTableWidgetItem(tr("NEXT_JAPAN")));
     ui->gashaTable->setHorizontalHeaderItem(1, new QTableWidgetItem(tr("NEXT_USA")));

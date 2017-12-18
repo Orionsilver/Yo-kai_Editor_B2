@@ -70,7 +70,7 @@
         <item row="4" column="0">
          <widget class="QLabel" name="countLabel">
           <property name="text">
-           <string>QTY1</string>
+           <string>QTY</string>
           </property>
          </widget>
         </item>
@@ -84,7 +84,7 @@
         <item row="5" column="0">
          <widget class="QLabel" name="count2Label">
           <property name="text">
-           <string>QTY2</string>
+           <string>ENCHANTMENT</string>
           </property>
          </widget>
         </item>

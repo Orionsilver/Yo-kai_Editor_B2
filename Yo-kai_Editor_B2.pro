@@ -63,9 +63,6 @@ SOURCES += src/main.cpp\
     src/cybercode/SearchCode.cpp \
     src/cybercode/SectionWriteCode.cpp \
     src/cybercode/WriteCode.cpp \
-    src/busters_equipmenttab.cpp \
-    src/busters_itemtab.cpp \
-    src/busters_hiddentreasuretab.cpp \
     src/cybercode/SectionOffsetCode.cpp \
     src/dataeditor/dataeditor.cpp \
     src/dataeditor/integereditor.cpp \
@@ -73,7 +70,8 @@ SOURCES += src/main.cpp\
     src/dataeditor/stringeditor.cpp \
     src/dataeditor/listeditor.cpp \
     src/dataeditor/hexintegereditor.cpp \
-    src/gashastate.cpp
+    src/gashastate.cpp \
+    src/battleitemtab.cpp
 
 HEADERS  += src/mainwindow.h \
     src/version.h \
@@ -123,9 +121,6 @@ HEADERS  += src/mainwindow.h \
     src/cybercode/SearchCode.h \
     src/cybercode/SectionWriteCode.h \
     src/cybercode/WriteCode.h \
-    src/busters_equipmenttab.h \
-    src/busters_itemtab.h \
-    src/busters_hiddentreasuretab.h \
     src/cybercode/SectionOffsetCode.h \
     src/dataeditor/dataeditor.h \
     src/dataeditor/integereditor.h \
@@ -133,7 +128,8 @@ HEADERS  += src/mainwindow.h \
     src/dataeditor/stringeditor.h \
     src/dataeditor/listeditor.h \
     src/dataeditor/hexintegereditor.h \
-    src/gashastate.h
+    src/gashastate.h \
+    src/battleitemtab.h
 
 FORMS    += src/ui/mainwindow.ui \
     src/ui/version_dialog.ui \
@@ -150,9 +146,7 @@ FORMS    += src/ui/mainwindow.ui \
     src/ui/hackslashtabform.ui \
     src/ui/gashatab.ui \
     src/ui/cheatcodedialog.ui \
-    src/ui/busters_equipmenttabform.ui \
-    src/ui/busters_itemtabform.ui \
-    src/ui/busters_hiddentreasuretabform.ui
+    src/ui/battleitemtabform.ui
 
 TRANSLATIONS = $$PWD/translations/app_ja.ts \
 $$PWD/translations/app_en.ts

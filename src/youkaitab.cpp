@@ -21,7 +21,7 @@ YoukaiTab::YoukaiTab(SaveManager* mgr, QWidget* parent, int sectionId)
 
     this->setNum1Offset(0);
     this->setItemsCount(GameConfig::YoukaiCountMax);
-    this->setItemSize(0x54);
+    this->setItemSize(0x4C);
 
     for (int i = 0; i < this->getItemsCount(); ++i) {
         ui->listWidget->addItem(QString(""));
@@ -35,15 +35,19 @@ YoukaiTab::YoukaiTab(SaveManager* mgr, QWidget* parent, int sectionId)
             it.first); /* userData */
     }
     form->youkaiCB->setCurrentIndex(-1);
-    foreach (const dataentry_t& it, GameData::getInstance().getData("ai")) {
-        form->AICB->addItem(it.second.value("name"), it.first);
+    foreach (const dataentry_t& it, GameData::getInstance().getData("hackslash_technic")) {
+        form->move1CB->addItem(it.second.value("name"), it.first);
+        form->move2CB->addItem(it.second.value("name"), it.first);
+        form->move3CB->addItem(it.second.value("name"), it.first);
     }
-    form->AICB->setCurrentIndex(-1);
+    form->move1CB->setCurrentIndex(-1);
+    form->move2CB->setCurrentIndex(-1);
+    form->move3CB->setCurrentIndex(-1);
 
     connect(form->youkaiNumApplyB, SIGNAL(clicked(bool)), SLOT(updateYoukaiCount()));
     connect(form->updateIDButton, SIGNAL(clicked(bool)), SLOT(updateID()));
     connect(form->fixIVButton, SIGNAL(clicked(bool)), SLOT(fixIVs()));
-    connect(form->allPoseB, SIGNAL(clicked(bool)), SLOT(allWinPoses()));
+    connect(form->defaultAtkB, SIGNAL(clicked(bool)), SLOT(loadDefaultAttacks()));
 
     /* editors */
     ListEditor* youkaiE = new ListEditor(this, form->youkaiLabel, form->youkaiCB, 0x04, 32);
@@ -52,33 +56,24 @@ YoukaiTab::YoukaiTab(SaveManager* mgr, QWidget* parent, int sectionId)
     this->editors.append(new IntegerEditor(this, form->num2Label, form->num2SB, 0x02, 16, false));
     this->editors.append(youkaiE);
     this->editors.append(new StringEditor(this, form->nicknameLabel, form->nicknameEdit, 0x08, 0x18));
-    this->editors.append(new HexIntegerEditor(this, form->IDLabel, form->IDEdit, 0x30, 32));
+    this->editors.append(new HexIntegerEditor(this, form->IDLabel, form->IDEdit, 0x3C, 32));
 
-    this->editors.append(new IntegerEditor(this, form->IV_HPLabel, form->IV_HPSB, 0x34, 8, false));
-    this->editors.append(new IntegerEditor(this, form->IV_StrLabel, form->IV_StrSB, 0x35, 8, false));
-    this->editors.append(new IntegerEditor(this, form->IV_SprLabel, form->IV_SprSB, 0x36, 8, false));
-    this->editors.append(new IntegerEditor(this, form->IV_DefLabel, form->IV_DefSB, 0x37, 8, false));
-    this->editors.append(new IntegerEditor(this, form->IV_SpdLabel, form->IV_SpdSB, 0x38, 8, false));
+    this->editors.append(new IntegerEditor(this, form->IV_HPLabel, form->IV_HPSB, 0x40, 8, false));
+    this->editors.append(new IntegerEditor(this, form->IV_StrLabel, form->IV_StrSB, 0x41, 8, false));
+    this->editors.append(new IntegerEditor(this, form->IV_SprLabel, form->IV_SprSB, 0x42, 8, false));
+    this->editors.append(new IntegerEditor(this, form->IV_DefLabel, form->IV_DefSB, 0x43, 8, false));
+    this->editors.append(new IntegerEditor(this, form->IV_SpdLabel, form->IV_SpdSB, 0x44, 8, false));
 
-    this->editors.append(new IntegerEditor(this, form->SC_HPLabel, form->SC_HPSB, 0x39, 8, true));
-    this->editors.append(new IntegerEditor(this, form->SC_StrLabel, form->SC_StrSB, 0x3A, 8, true));
-    this->editors.append(new IntegerEditor(this, form->SC_SprLabel, form->SC_SprSB, 0x3B, 8, true));
-    this->editors.append(new IntegerEditor(this, form->SC_DefLabel, form->SC_DefSB, 0x3C, 8, true));
-    this->editors.append(new IntegerEditor(this, form->SC_SpdLabel, form->SC_SpdSB, 0x3D, 8, true));
+    this->editors.append(new IntegerEditor(this, form->levelLabel, form->levelSB, 0x48, 8, false));
 
-    this->editors.append(new IntegerEditor(this, form->atkLVLabel, form->atkLVSB, 0x46, 8, false));
-    this->editors.append(new IntegerEditor(this, form->inspiritLVLabel, form->inspiritLVSB, 0x47, 8, false));
-    this->editors.append(new IntegerEditor(this, form->soultimateLVLabel, form->soultimateLVSB, 0x48, 8, false));
+    this->editors.append(new ListEditor(this, form->move1Label, form->move1CB, 0x28, 32));
+    this->editors.append(new ListEditor(this, form->move2Label, form->move2CB, 0x2C, 32));
+    this->editors.append(new ListEditor(this, form->move3Label, form->move3CB, 0x30, 32));
 
-    this->editors.append(new IntegerEditor(this, form->levelLabel, form->levelSB, 0x49, 8, false));
-
-    this->editors.append(new IntegerEditor(this, form->loafLabel, form->loafSB, 0x4C, 4, false, false));
-    this->editors.append(new ListEditor(this, form->AILabel, form->AICB, 0x4C, 4, true));
-
-    this->editors.append(new BitEditor(this, form->flag4CB, 0x4D, 4));
-    this->editors.append(new BitEditor(this, form->flag5CB, 0x4D, 5));
-    this->editors.append(new BitEditor(this, form->flag6CB, 0x4D, 6));
-    this->editors.append(new BitEditor(this, form->flag7CB, 0x4D, 7));
+    this->editors.append(new BitEditor(this, form->flag4CB, 0x4A, 0));
+    this->editors.append(new BitEditor(this, form->flag5CB, 0x4A, 1));
+    this->editors.append(new BitEditor(this, form->flag6CB, 0x4A, 2));
+    this->editors.append(new BitEditor(this, form->flag7CB, 0x4A, 3));
 }
 
 YoukaiTab::~YoukaiTab()
@@ -89,10 +84,11 @@ YoukaiTab::~YoukaiTab()
 void YoukaiTab::setButtonsEnabled(bool s)
 {
     ListTab::setButtonsEnabled(s);
-    form->youkaiNumApplyB->setEnabled(true);
+    //    form->youkaiNumApplyB->setEnabled(true);
     form->updateIDButton->setEnabled(true);
     form->fixIVButton->setEnabled(true);
-    form->allPoseB->setEnabled(true);
+    //    form->allPoseB->setEnabled(true);
+    form->defaultAtkB->setEnabled(true);
 }
 
 void YoukaiTab::updateYoukaiCount()
@@ -119,9 +115,9 @@ void YoukaiTab::updateID()
         this->writeSelectedItem();
         quint32 myId = this->getMgr()->readSection<quint32>(0x00, 0x14);
         for (int i = 0; i < this->getItemsCount(); ++i) {
-            quint32 youkaiId = this->read<quint32>(0x04 + 0x54 * i);
+            quint32 youkaiId = this->read<quint32>(0x04 + 0x4C * i);
             if (form->youkaiCB->findData(youkaiId) >= 0) {
-                this->write<quint32>(myId, 0x30 + 0x54 * i); // ownerId
+                this->write<quint32>(myId, 0x3C + 0x4C * i); // ownerId
             }
         }
         this->update();
@@ -137,17 +133,17 @@ void YoukaiTab::fixIVs()
         this->writeSelectedItem();
         qsrand(QTime::currentTime().msec());
         for (int i = 0; i < this->getItemsCount(); ++i) {
-            quint32 youkaiId = this->read<quint32>(0x04 + 0x54 * i);
+            quint32 youkaiId = this->read<quint32>(0x04 + 0x4C * i);
             if (form->youkaiCB->findData(youkaiId) >= 0) {
                 quint8 IV_Sum = 0;
-                quint8 IV_HP = this->read<quint8>(0x34 + 0x54 * i);
-                quint8 IV_Str = this->read<quint8>(0x35 + 0x54 * i);
-                quint8 IV_Spr = this->read<quint8>(0x36 + 0x54 * i);
-                quint8 IV_Def = this->read<quint8>(0x37 + 0x54 * i);
-                quint8 IV_Spd = this->read<quint8>(0x38 + 0x54 * i);
+                quint8 IV_HP = this->read<quint8>(0x40 + 0x4C * i);
+                quint8 IV_Str = this->read<quint8>(0x41 + 0x4C * i);
+                quint8 IV_Spr = this->read<quint8>(0x42 + 0x4C * i);
+                quint8 IV_Def = this->read<quint8>(0x43 + 0x4C * i);
+                quint8 IV_Spd = this->read<quint8>(0x44 + 0x4C * i);
                 IV_Sum = IV_HP / 2 + IV_Str + IV_Spr + IV_Def + IV_Spd;
                 int ivs[5] = {};
-                if (this->read<quint8>(0x4D + 0x54 * i) & (1 << 4)) {
+                if (this->read<quint8>(0x4A + 0x4C * i) & (1 << 1)) {
                     ivs[0] = ivs[1] = ivs[2] = ivs[3] = ivs[4] = 8;
                 } else if (IV_HP % 2 != 0 || IV_Sum != 40) {
                     for (int j = 0; j < 40; ++j) {
@@ -156,31 +152,29 @@ void YoukaiTab::fixIVs()
                 } else {
                     continue;
                 }
-                this->write<quint8>(ivs[0] * 2, 0x34 + 0x54 * i); // IV_HP
-                this->write<quint8>(ivs[1], 0x35 + 0x54 * i); // IV_Str
-                this->write<quint8>(ivs[2], 0x36 + 0x54 * i); // IV_Spr
-                this->write<quint8>(ivs[3], 0x37 + 0x54 * i); // IV_Def
-                this->write<quint8>(ivs[4], 0x38 + 0x54 * i); // IV_Spd
+                this->write<quint8>(ivs[0] * 2, 0x40 + 0x4C * i); // IV_HP
+                this->write<quint8>(ivs[1], 0x41 + 0x4C * i); // IV_Str
+                this->write<quint8>(ivs[2], 0x42 + 0x4C * i); // IV_Spr
+                this->write<quint8>(ivs[3], 0x43 + 0x4C * i); // IV_Def
+                this->write<quint8>(ivs[4], 0x44 + 0x4C * i); // IV_Spd
             }
         }
         this->update();
     }
 }
 
-void YoukaiTab::allWinPoses()
+void YoukaiTab::loadDefaultAttacks()
 {
-    int ans = QMessageBox::question(this, tr("CONFIRM"),
-        tr("ALL_WINPOSES_WARNING"),
-        QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
-    if (ans == QMessageBox::Ok) {
-        this->writeSelectedItem();
-        for (int i = 0; i < this->getItemsCount(); ++i) {
-            quint32 youkaiId = this->read<quint32>(0x04 + 0x54 * i);
-            if (form->youkaiCB->findData(youkaiId) >= 0) {
-                quint8 curr = this->read<quint16>(0x4B + 0x54 * i);
-                this->write<quint8>(curr | 0xA8, 0x4B + 0x54 * i); // num1
+    int row;
+    if ((row = ui->listWidget->currentRow()) >= 0) {
+        if (form->youkaiCB->currentIndex() >= 0) {
+            quint32 youkaiId = form->youkaiCB->currentData().value<quint32>();
+            if (GameData::getInstance().getJSONObjectData("technic").contains(QString::number(youkaiId))) {
+                QJsonArray technic = GameData::getInstance().getJSONObjectData("technic")[QString::number(youkaiId)].toArray();
+                form->move1CB->setCurrentIndex(form->move1CB->findData(technic.at(0).toVariant().toUInt()));
+                form->move2CB->setCurrentIndex(form->move2CB->findData(technic.at(1).toVariant().toUInt()));
+                form->move3CB->setCurrentIndex(form->move3CB->findData(technic.at(2).toVariant().toUInt()));
             }
         }
-        this->update();
     }
 }

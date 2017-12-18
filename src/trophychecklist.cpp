@@ -7,7 +7,7 @@ TrophyCheckList::TrophyCheckList(int sectionId, int offset, SaveManager* mgr, QW
     QListWidgetItem* i = new QListWidgetItem("", this);
     i->setCheckState(Qt::Unchecked);
     i->setHidden(true);
-    foreach (QJsonValue v, GameData::getInstance().getJSONData("trophy")) {
+    foreach (QJsonValue v, GameData::getInstance().getJSONArrayData("trophy")) {
         QListWidgetItem* ia = new QListWidgetItem(v.toObject()["name"].toString(), this);
         ia->setFlags(ia->flags() | Qt::ItemIsUserCheckable);
         ia->setCheckState(Qt::Unchecked);

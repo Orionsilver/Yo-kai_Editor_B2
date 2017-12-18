@@ -10,9 +10,10 @@ public:
     static const int SECTIONS_CNT = 0x13;
     static const quint8 defaultOrder[SECTIONS_CNT];
     static const quint8 sectionF2magic = 0x02;
-    static const int YoukaiCountMax = 656;
-    static const int ItemCountMax = 618;
-    static const int EquipmentCountMax = 110;
+    static const int YoukaiCountMax = 766;
+    static const int ItemCountMax = 1008;
+    static const int BattleItemCountMax = 9;
+    static const int EquipmentCountMax = 4;
     static const int ImportantCountMax = 240;
     static const int SoulCountMax = 100;
     static const int HackSlashCountMax = 48; // item box

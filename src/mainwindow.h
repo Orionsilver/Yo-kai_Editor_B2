@@ -3,9 +3,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "busters_equipmenttab.h"
-#include "busters_hiddentreasuretab.h"
-#include "busters_itemtab.h"
+#include "battleitemtab.h"
 #include "cheatcodedialog.h"
 #include "equipmenttab.h"
 #include "error.h"

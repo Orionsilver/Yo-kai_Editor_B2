@@ -1,6 +1,7 @@
 #pragma execution_character_set("utf-8")
 
 #include "savemanager.h"
+#include "gameconfig.h"
 
 SaveManager::SaveManager()
     : isLoaded(false)

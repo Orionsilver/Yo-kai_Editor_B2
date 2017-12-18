@@ -123,105 +123,11 @@
          </layout>
         </item>
         <item>
-         <layout class="QFormLayout" name="formLayout_4">
-          <item row="0" column="0">
-           <widget class="QLabel" name="atkLVLabel">
-            <property name="text">
-             <string>ATK_LEVEL</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="inspiritLVLabel">
-            <property name="text">
-             <string>INSPR_LEVEL</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="soultimateLVLabel">
-            <property name="text">
-             <string>SOULTIMATE_LEVEL</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QSpinBox" name="atkLVSB">
-            <property name="minimum">
-             <number>1</number>
-            </property>
-            <property name="maximum">
-             <number>10</number>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QSpinBox" name="inspiritLVSB">
-            <property name="minimum">
-             <number>1</number>
-            </property>
-            <property name="maximum">
-             <number>10</number>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QSpinBox" name="soultimateLVSB">
-            <property name="minimum">
-             <number>1</number>
-            </property>
-            <property name="maximum">
-             <number>10</number>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="loafLabel">
-            <property name="text">
-             <string>PERSONAL_LOAF</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QSpinBox" name="loafSB">
-            <property name="maximum">
-             <number>15</number>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="AILabel">
-            <property name="text">
-             <string>PERSONAL_AI</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QComboBox" name="AICB"/>
-          </item>
-          <item row="5" column="0">
-           <widget class="QLabel" name="trainingLabel">
-            <property name="text">
-             <string>TRAINING_COUNT</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="QSpinBox" name="trainingSB">
-            <property name="maximum">
-             <number>5</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <layout class="QFormLayout" name="formLayout_4"/>
         </item>
        </layout>
       </widget>
      </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_6">
      <item>
       <widget class="QGroupBox" name="groupBox">
        <property name="title">
@@ -305,99 +211,55 @@
        </layout>
       </widget>
      </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QGroupBox" name="groupBox_3">
        <property name="title">
-        <string>SPORTS_CLUB</string>
+        <string>TECHNIC</string>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <layout class="QVBoxLayout" name="verticalLayout_8">
         <item>
          <layout class="QFormLayout" name="formLayout_3">
           <item row="0" column="0">
-           <widget class="QLabel" name="SC_HPLabel">
+           <widget class="QLabel" name="move1Label">
             <property name="text">
-             <string>HP</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="SC_StrLabel">
-            <property name="text">
-             <string>STR</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="SC_SprLabel">
-            <property name="text">
-             <string>SPR</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="SC_DefLabel">
-            <property name="text">
-             <string>DEF</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="SC_SpdLabel">
-            <property name="text">
-             <string>SPD</string>
+             <string notr="true">1</string>
             </property>
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QSpinBox" name="SC_HPSB">
-            <property name="minimum">
-             <number>-10</number>
-            </property>
-            <property name="maximum">
-             <number>25</number>
+           <widget class="QComboBox" name="move1CB"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="move2Label">
+            <property name="text">
+             <string notr="true">2</string>
             </property>
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QSpinBox" name="SC_StrSB">
-            <property name="minimum">
-             <number>-10</number>
-            </property>
-            <property name="maximum">
-             <number>25</number>
+           <widget class="QComboBox" name="move2CB"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="move3Label">
+            <property name="text">
+             <string notr="true">3</string>
             </property>
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QSpinBox" name="SC_SprSB">
-            <property name="minimum">
-             <number>-10</number>
-            </property>
-            <property name="maximum">
-             <number>25</number>
-            </property>
-           </widget>
+           <widget class="QComboBox" name="move3CB"/>
           </item>
           <item row="3" column="1">
-           <widget class="QSpinBox" name="SC_DefSB">
-            <property name="minimum">
-             <number>-10</number>
+           <widget class="QPushButton" name="defaultAtkB">
+            <property name="enabled">
+             <bool>false</bool>
             </property>
-            <property name="maximum">
-             <number>25</number>
-            </property>
-            <property name="value">
-             <number>0</number>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QSpinBox" name="SC_SpdSB">
-            <property name="minimum">
-             <number>-10</number>
-            </property>
-            <property name="maximum">
-             <number>25</number>
+            <property name="text">
+             <string>USE_DEFAULT</string>
             </property>
            </widget>
           </item>
@@ -417,28 +279,28 @@
           <item>
            <widget class="QCheckBox" name="flag4CB">
             <property name="text">
-             <string>IS_SPECIAL</string>
+             <string>0</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="flag5CB">
             <property name="text">
-             <string>IS_NEW</string>
+             <string>IS_SPECIAL</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="flag6CB">
             <property name="text">
-             <string notr="true">6</string>
+             <string notr="true">IS_NEW</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="flag7CB">
             <property name="text">
-             <string>IS_CHEATED</string>
+             <string>3</string>
             </property>
            </widget>
           </item>
@@ -504,16 +366,6 @@
        </property>
        <property name="text">
         <string>FIX_IV</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="allPoseB">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="text">
-        <string>ALL_WINPOSES</string>
        </property>
       </widget>
      </item>

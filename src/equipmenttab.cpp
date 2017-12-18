@@ -13,19 +13,16 @@ EquipmentTab::EquipmentTab(SaveManager* mgr, QWidget* parent, int sectionId)
     form->setupUi(w);
     ui->form->addWidget(w);
 
-    this->setNum1Offset(0x1000);
+    this->setNum1Offset(0x5000);
     this->setItemsCount(GameConfig::EquipmentCountMax);
-    this->setItemSize(0x0C);
+    this->setItemSize(0x14);
 
     for (int i = 0; i < GameConfig::EquipmentCountMax; ++i) {
         ui->listWidget->addItem(QString(""));
     }
 
     /* intert items into combobox */
-    foreach (const dataentry_t& it, GameData::getInstance().getData("equipment")) {
-        form->itemCB->addItem(it.second.value("name"), it.first);
-    }
-    foreach (const dataentry_t& it, GameData::getInstance().getData("battle")) {
+    foreach (const dataentry_t& it, GameData::getInstance().getData("hackslash_equipment")) {
         form->itemCB->addItem(it.second.value("name"), it.first);
     }
     form->itemCB->setCurrentIndex(-1);
@@ -36,8 +33,8 @@ EquipmentTab::EquipmentTab(SaveManager* mgr, QWidget* parent, int sectionId)
     this->editors.append(new IntegerEditor(this, form->num1Label, form->num1SB, 0x00, 16, false));
     this->editors.append(new IntegerEditor(this, form->num2Label, form->num2SB, 0x02, 16, false));
     this->editors.append(itemE);
-    this->editors.append(new IntegerEditor(this, form->countLabel, form->countSB, 0x8, 8, false));
-    this->editors.append(new IntegerEditor(this, form->count2Label, form->count2SB, 0x9, 8, false));
+    this->editors.append(new IntegerEditor(this, form->countLabel, form->countSB, 0xA, 8, false));
+    this->editors.append(new IntegerEditor(this, form->count2Label, form->count2SB, 0xB, 8, false));
 }
 
 EquipmentTab::~EquipmentTab()

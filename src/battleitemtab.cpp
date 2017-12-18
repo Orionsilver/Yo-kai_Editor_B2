@@ -1,28 +1,29 @@
 #pragma execution_character_set("utf-8")
 
-#include "busters_hiddentreasuretab.h"
+#include "battleitemtab.h"
+#include <QMessageBox>
 
 #include "dataeditor/integereditor.h"
 #include "dataeditor/listeditor.h"
 
-BustersHiddenTreasureTab::BustersHiddenTreasureTab(SaveManager* mgr, QWidget* parent, int sectionId)
+BattleItemTab::BattleItemTab(SaveManager* mgr, QWidget* parent, int sectionId)
     : ListTab(mgr, parent, sectionId)
-    , form(new Ui::BustersHiddenTreasureTabForm)
+    , form(new Ui::BattleItemTabForm)
 {
     QWidget* w = new QWidget(this);
     form->setupUi(w);
     ui->form->addWidget(w);
 
     this->setNum1Offset(0x4000);
-    this->setItemsCount(GameConfig::BustersHiddenTreasureCountMax);
-    this->setItemSize(0x0C);
+    this->setItemsCount(GameConfig::BattleItemCountMax);
+    this->setItemSize(0x14);
 
     for (int i = 0; i < this->getItemsCount(); ++i) {
         ui->listWidget->addItem(QString(""));
     }
 
     /* intert items into combobox */
-    foreach (const dataentry_t& it, GameData::getInstance().getData("busters_hidden_treasure")) {
+    foreach (const dataentry_t& it, GameData::getInstance().getData("hackslash_battle")) {
         form->itemCB->addItem(it.second.value("name"), it.first);
     }
     form->itemCB->setCurrentIndex(-1);
@@ -36,7 +37,12 @@ BustersHiddenTreasureTab::BustersHiddenTreasureTab(SaveManager* mgr, QWidget* pa
     this->editors.append(new IntegerEditor(this, form->countLabel, form->countSB, 0x8, 8, false));
 }
 
-BustersHiddenTreasureTab::~BustersHiddenTreasureTab()
+BattleItemTab::~BattleItemTab()
 {
     delete form;
+}
+
+void BattleItemTab::update()
+{
+    ListTab::update();
 }
