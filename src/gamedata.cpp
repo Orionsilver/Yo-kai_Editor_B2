@@ -7,6 +7,7 @@
 GameData::GameData()
 {
     this->availableData << "consume"
+                        << "equipment_skill"
                         << "hackslash_battle"
                         << "hackslash_baura"
                         << "hackslash_consume"

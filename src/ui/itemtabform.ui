@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>277</width>
-    <height>286</height>
+    <width>338</width>
+    <height>344</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -78,6 +78,43 @@
          <widget class="QSpinBox" name="countSB">
           <property name="minimum">
            <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="skill1Label">
+          <property name="text">
+           <string>SKILL1</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QComboBox" name="skill1CB"/>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="skill2Label">
+          <property name="text">
+           <string>SKILL2</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QComboBox" name="skill2CB"/>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="enchantmentLabel">
+          <property name="text">
+           <string>ENCHANTMENT</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QSpinBox" name="enchantmentSB">
+          <property name="minimum">
+           <number>-128</number>
+          </property>
+          <property name="maximum">
+           <number>127</number>
           </property>
          </widget>
         </item>

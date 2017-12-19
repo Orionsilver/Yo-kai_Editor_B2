@@ -35,9 +35,8 @@ MainWindow::MainWindow(QWidget* parent)
     //    GashaTab* gt = new GashaTab(this->mgr, this, 0x0E);
     ItemTab* it = new ItemTab(this->mgr, this, 0x24);
     BattleItemTab* bit = new BattleItemTab(this->mgr, this, 0x25);
-    EquipmentTab* et = new EquipmentTab(this->mgr, this, 0x26);
-    EquipmentTab* e2t = new EquipmentTab(this->mgr, this, 0x30);
-    e2t->setNum1Offset(0x6000);
+    EquipmentTab* et = new EquipmentTab(this->mgr, 0x5000, this, 0x26);
+    EquipmentTab* e2t = new EquipmentTab(this->mgr, 0x6000, this, 0x30);
     //    ImportantTab* imt = new ImportantTab(this->mgr, this, 0x06);
     //    MedaliumTab* mt = new MedaliumTab(this->mgr, this, 0x01, 0x774);
     //    HackSlashTab* ht = new HackSlashTab(this->mgr, this, 0x27); // 0x27 for item box, 0x28 for backpack items

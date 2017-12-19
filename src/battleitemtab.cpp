@@ -26,6 +26,16 @@ BattleItemTab::BattleItemTab(SaveManager* mgr, QWidget* parent, int sectionId)
     foreach (const dataentry_t& it, GameData::getInstance().getData("hackslash_battle")) {
         form->itemCB->addItem(it.second.value("name"), it.first);
     }
+    foreach (const dataentry_t& it, GameData::getInstance().getData("hackslash_equipment")) {
+        form->itemCB->addItem(it.second.value("name"), it.first);
+    }
+    foreach (const dataentry_t& it, GameData::getInstance().getData("item_hackslash")) {
+        form->itemCB->addItem(it.second.value("name"), it.first);
+    }
+    foreach (const dataentry_t& it, GameData::getInstance().getData("equipment_skill")) {
+        form->skill1CB->addItem(it.second.value("name"), it.first);
+        form->skill2CB->addItem(it.second.value("name"), it.first);
+    }
     form->itemCB->setCurrentIndex(-1);
 
     /* editors */
@@ -35,6 +45,9 @@ BattleItemTab::BattleItemTab(SaveManager* mgr, QWidget* parent, int sectionId)
     this->editors.append(new IntegerEditor(this, form->num2Label, form->num2SB, 0x02, 16, false));
     this->editors.append(itemE);
     this->editors.append(new IntegerEditor(this, form->countLabel, form->countSB, 0x8, 8, false));
+    this->editors.append(new IntegerEditor(this, form->enchantmentLabel, form->enchantmentSB, 0xB, 8, true));
+    this->editors.append(new ListEditor(this, form->skill1Label, form->skill1CB, 0x0C, 32, false));
+    this->editors.append(new ListEditor(this, form->skill2Label, form->skill2CB, 0x10, 32, false));
 }
 
 BattleItemTab::~BattleItemTab()
