@@ -26,7 +26,7 @@ ItemTab::ItemTab(SaveManager* mgr, QWidget* parent, int sectionId)
     foreach (const dataentry_t& it, GameData::getInstance().getData("hackslash_consume")) {
         form->itemCB->addItem(it.second.value("name"), it.first);
     }
-    foreach (const dataentry_t& it, GameData::getInstance().getData("item_hackslash")) {
+    foreach (const dataentry_t& it, GameData::getInstance().getData("hackslash_battle")) {
         form->itemCB->addItem(it.second.value("name"), it.first);
     }
     foreach (const dataentry_t& it, GameData::getInstance().getData("hackslash_equipment")) {

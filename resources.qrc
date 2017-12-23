@@ -17,7 +17,6 @@
         <file>data/youkai.xml</file>
         <file>data/youkaiNum.xml</file>
         <file>data/technic.json</file>
-        <file>data/item_hackslash.xml</file>
         <file>data/equipment_skill.xml</file>
     </qresource>
     <qresource prefix="/translations">

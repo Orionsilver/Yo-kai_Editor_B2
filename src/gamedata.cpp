@@ -17,7 +17,6 @@ GameData::GameData()
                         << "hackslash_technic"
                         << "hackslash_treasure_jewel"
                         << "hidden_treasure"
-                        << "item_hackslash"
                         << "youkai"
                         << "youkaiNum";
     foreach (QString s, this->availableData) {
