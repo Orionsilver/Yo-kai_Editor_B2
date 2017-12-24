@@ -16,7 +16,7 @@ GUIから編集するほか、バイナリエディタ(Ctrl+E または Cmd+E)�
 
 ## 使いかた
 ### Homebrew または CFW
-1. svdt, JK's SaveManagerなどのアプリケーションで、game*.ywとhead.ywをダンプする。
+1. svdt, JK's SaveManager, Checkpoint などのアプリケーションで、game*.ywとhead.ywをダンプする。
 2. ツールを起動してgame*.ywを開く。
 3. 変更する。
 4. game*.ywを保存する。

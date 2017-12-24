@@ -11,6 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = "Yo-kai Editor B2"
 TEMPLATE = app
 
+include(src/QHexEdit/QHexEdit.pri)
+
 CONFIG += c++11
 
 INCLUDEPATH += src
@@ -30,15 +32,6 @@ SOURCES += src/main.cpp\
     src/gamedata.cpp \
     src/gameconfig.cpp \
     src/manualeditdialog.cpp \
-    src/QHexEdit/qhexedit.cpp \
-    src/QHexEdit/qhexeditcomments.cpp \
-    src/QHexEdit/qhexeditdata.cpp \
-    src/QHexEdit/qhexeditdatadevice.cpp \
-    src/QHexEdit/qhexeditdatareader.cpp \
-    src/QHexEdit/qhexeditdatawriter.cpp \
-    src/QHexEdit/qhexedithighlighter.cpp \
-    src/QHexEdit/qhexeditprivate.cpp \
-    src/QHexEdit/sparserangemap.cpp \
     src/itemtab.cpp \
     src/equipmenttab.cpp \
     src/importanttab.cpp \
@@ -48,7 +41,6 @@ SOURCES += src/main.cpp\
     src/medaliumtab.cpp \
     src/youkaichecklist.cpp \
     src/section242tab.cpp \
-    src/hackslashtab.cpp \
     src/gashatab.cpp \
     src/gashalot.cpp \
     src/checklist.cpp \
@@ -71,7 +63,8 @@ SOURCES += src/main.cpp\
     src/dataeditor/listeditor.cpp \
     src/dataeditor/hexintegereditor.cpp \
     src/gashastate.cpp \
-    src/battleitemtab.cpp
+    src/battleitemtab.cpp \
+    src/consumetab.cpp
 
 HEADERS  += src/mainwindow.h \
     src/version.h \
@@ -88,15 +81,6 @@ HEADERS  += src/mainwindow.h \
     src/youkaitab.h \
     src/gamedata.h \
     src/manualeditdialog.h \
-    src/QHexEdit/qhexedit.h \
-    src/QHexEdit/qhexeditcomments.h \
-    src/QHexEdit/qhexeditdata.h \
-    src/QHexEdit/qhexeditdatadevice.h \
-    src/QHexEdit/qhexeditdatareader.h \
-    src/QHexEdit/qhexeditdatawriter.h \
-    src/QHexEdit/qhexedithighlighter.h \
-    src/QHexEdit/qhexeditprivate.h \
-    src/QHexEdit/sparserangemap.h \
     src/itemtab.h \
     src/equipmenttab.h \
     src/importanttab.h \
@@ -106,7 +90,6 @@ HEADERS  += src/mainwindow.h \
     src/medaliumtab.h \
     src/youkaichecklist.h \
     src/section242tab.h \
-    src/hackslashtab.h \
     src/gashatab.h \
     src/gashalot.h \
     src/checklist.h \
@@ -129,7 +112,8 @@ HEADERS  += src/mainwindow.h \
     src/dataeditor/listeditor.h \
     src/dataeditor/hexintegereditor.h \
     src/gashastate.h \
-    src/battleitemtab.h
+    src/battleitemtab.h \
+    src/consumetab.h
 
 FORMS    += src/ui/mainwindow.ui \
     src/ui/version_dialog.ui \
@@ -143,10 +127,10 @@ FORMS    += src/ui/mainwindow.ui \
     src/ui/equipmenttabform.ui \
     src/ui/importanttabform.ui \
     src/ui/section242tab.ui \
-    src/ui/hackslashtabform.ui \
     src/ui/gashatab.ui \
     src/ui/cheatcodedialog.ui \
-    src/ui/battleitemtabform.ui
+    src/ui/battleitemtabform.ui \
+    src/ui/consumetabform.ui
 
 TRANSLATIONS = $$PWD/translations/app_ja.ts \
 $$PWD/translations/app_en.ts
