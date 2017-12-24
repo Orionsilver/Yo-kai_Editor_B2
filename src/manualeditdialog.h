@@ -3,10 +3,10 @@
 #ifndef MANUALEDITDIALOG_H
 #define MANUALEDITDIALOG_H
 
-#include "QHexEdit/qhexeditdata.h"
-#include "QHexEdit/qhexeditdatareader.h"
+#include "QHexEdit/qhexedit.h"
 #include "savemanager.h"
 #include <QDialog>
+#include <QPushButton>
 #include <QTreeWidget>
 
 namespace Ui {
@@ -20,7 +20,7 @@ public:
     explicit ManualEditDialog(QWidget* parent, SaveManager* mgr);
     ~ManualEditDialog();
     void setSections();
-    void load(quint8 section);
+    void load(quint32 section);
     void setMgr(SaveManager* value);
     void setTreeWidget(QTreeWidget* t);
 
@@ -31,9 +31,9 @@ public slots:
 
 private:
     Ui::ManualEditDialog* ui;
-    QList<quint8> sections;
+    QList<quint32> sections;
     SaveManager* mgr;
-    QHexEditData* myData;
+    QHexDocument* myData;
     QTreeWidget* tree;
 };
 

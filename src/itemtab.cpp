@@ -3,6 +3,7 @@
 #include "itemtab.h"
 #include <QMessageBox>
 
+#include "dataeditor/biteditor.h"
 #include "dataeditor/integereditor.h"
 #include "dataeditor/listeditor.h"
 
@@ -14,8 +15,8 @@ ItemTab::ItemTab(SaveManager* mgr, QWidget* parent, int sectionId)
     form->setupUi(w);
     ui->form->addWidget(w);
 
-    this->setNum1Offset(0x2000);
-    this->setItemsCount(GameConfig::ItemCountMax);
+    this->setNum1Offset(0x4000);
+    this->setItemsCount(GameConfig::BattleItemCountMax);
     this->setItemSize(0x14);
 
     for (int i = 0; i < this->getItemsCount(); ++i) {
@@ -51,6 +52,15 @@ ItemTab::ItemTab(SaveManager* mgr, QWidget* parent, int sectionId)
     this->editors.append(new IntegerEditor(this, form->enchantmentLabel, form->enchantmentSB, 0xB, 8, true));
     this->editors.append(new ListEditor(this, form->skill1Label, form->skill1CB, 0x0C, 32, false));
     this->editors.append(new ListEditor(this, form->skill2Label, form->skill2CB, 0x10, 32, false));
+
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 0));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 1));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 2));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 3));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 4));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 5));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 6));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 7));
 }
 
 ItemTab::~ItemTab()
@@ -61,11 +71,4 @@ ItemTab::~ItemTab()
 void ItemTab::update()
 {
     ListTab::update();
-}
-
-void ItemTab::setButtonsEnabled(bool s)
-{
-    ui->applyButton->setEnabled(s);
-    ui->resetButton->setEnabled(s);
-    ui->clearB->setEnabled(s);
 }

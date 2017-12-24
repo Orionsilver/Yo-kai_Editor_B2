@@ -16,29 +16,30 @@ public:
     SaveManager();
     ~SaveManager();
     bool loaded() const;
-    QByteArray getSectionData(quint8 sectionId, bool withHeaderFooter = false);
-    void setSectionData(const QByteArray& in, quint8 sectionId);
+    QByteArray getSectionData(quint32 sectionId, bool withHeaderFooter = false);
+    void setSectionData(const QByteArray& in, quint32 sectionId);
     Error::ErrorCode loadKeyFromHeadFile(QString path);
     Error::ErrorCode loadFile(QString path);
     Error::ErrorCode loadDecryptedFile(QString path);
     Error::ErrorCode writeFile(QString path);
     Error::ErrorCode writeDecryptedFile(QString path);
     template <class V>
-    void writeSection(V val, int offset, quint8 sectionId);
+    void writeSection(V val, int offset, quint32 sectionId);
     template <class V>
-    V readSection(int offset, quint8 sectionId);
+    V readSection(int offset, quint32 sectionId);
     template <class V>
     void writeRaw(V val, int offset);
     template <class V>
     V readRaw(int offset);
-    QString readString(int offset, int lenInBytes, quint8 sectionId);
-    void writeString(QString in, int offset, int lenInBytes, quint8 sectionId);
-    QVector<bool> readBoolVector(int offset, int count, quint8 sectionId);
-    void writeBoolVector(const QVector<bool>& v, int offset, quint8 sectionId);
+    QString readString(int offset, int lenInBytes, quint32 sectionId);
+    void writeString(QString in, int offset, int lenInBytes, quint32 sectionId);
+    QVector<bool> readBoolVector(int offset, int count, quint32 sectionId);
+    void writeBoolVector(const QVector<bool>& v, int offset, quint32 sectionId);
     QString getFilepath() const;
     QTreeWidget* getTw() const;
-    Section* getSectionById(quint8 id);
+    Section* getSectionById(quint32 id);
     int indexOfRaw(const QByteArray& ba, int from = 0) const;
+    bool isVirtualSection(quint32 sectionId);
 
 private:
     bool isLoaded;
@@ -60,6 +61,8 @@ private:
     static quint32 sub2(const QByteArray* in, int index);
     QByteArray genKey(QByteArray* head, int index);
     static const quint8 defaultOrder[];
+    void separateSection36();
+    void mergeSection36();
 };
 
 #endif // SAVEMANAGER_H

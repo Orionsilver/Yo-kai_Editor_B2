@@ -1,6 +1,6 @@
 #include "section.h"
 
-Section::Section(QTreeWidget* parent, quint8 id, quint32 size, quint32 offset)
+Section::Section(QTreeWidget* parent, quint32 id, quint32 size, quint32 offset)
     : QTreeWidgetItem(parent, Section::Type)
     , id(id)
     , size(size)
@@ -13,12 +13,12 @@ Section::~Section()
 {
 }
 
-quint8 Section::getId() const
+quint32 Section::getId() const
 {
     return id;
 }
 
-void Section::setId(const quint8& value)
+void Section::setId(const quint32& value)
 {
     id = value;
 }

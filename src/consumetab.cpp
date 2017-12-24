@@ -1,22 +1,22 @@
 #pragma execution_character_set("utf-8")
 
-#include "battleitemtab.h"
+#include "consumetab.h"
 #include <QMessageBox>
 
 #include "dataeditor/biteditor.h"
 #include "dataeditor/integereditor.h"
 #include "dataeditor/listeditor.h"
 
-BattleItemTab::BattleItemTab(SaveManager* mgr, QWidget* parent, int sectionId)
+ConsumeTab::ConsumeTab(SaveManager* mgr, QWidget* parent, int sectionId)
     : ListTab(mgr, parent, sectionId)
-    , form(new Ui::BattleItemTabForm)
+    , form(new Ui::ConsumeTabForm)
 {
     QWidget* w = new QWidget(this);
     form->setupUi(w);
     ui->form->addWidget(w);
 
-    this->setNum1Offset(0x0);
-    this->setItemsCount(GameConfig::HackslashBattleCountMax);
+    this->setNum1Offset(0x2000);
+    this->setItemsCount(GameConfig::HackslashConsumeCountMax);
     this->setItemSize(0x14);
 
     for (int i = 0; i < this->getItemsCount(); ++i) {
@@ -24,7 +24,7 @@ BattleItemTab::BattleItemTab(SaveManager* mgr, QWidget* parent, int sectionId)
     }
 
     /* intert items into combobox */
-    foreach (const dataentry_t& it, GameData::getInstance().getData("hackslash_battle")) {
+    foreach (const dataentry_t& it, GameData::getInstance().getData("hackslash_consume")) {
         form->itemCB->addItem(it.second.value("name"), it.first);
     }
     form->itemCB->setCurrentIndex(-1);
@@ -35,7 +35,7 @@ BattleItemTab::BattleItemTab(SaveManager* mgr, QWidget* parent, int sectionId)
     this->editors.append(new IntegerEditor(this, form->num1Label, form->num1SB, 0x00, 16, false));
     this->editors.append(new IntegerEditor(this, form->num2Label, form->num2SB, 0x02, 16, false));
     this->editors.append(itemE);
-    this->editors.append(new IntegerEditor(this, form->countLabel, form->countSB, 0xA, 8, false));
+    this->editors.append(new IntegerEditor(this, form->countLabel, form->countSB, 0xA, 8));
 
     this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 0));
     this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 1));
@@ -47,12 +47,12 @@ BattleItemTab::BattleItemTab(SaveManager* mgr, QWidget* parent, int sectionId)
     this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 7));
 }
 
-BattleItemTab::~BattleItemTab()
+ConsumeTab::~ConsumeTab()
 {
     delete form;
 }
 
-void BattleItemTab::update()
+void ConsumeTab::update()
 {
     ListTab::update();
 }

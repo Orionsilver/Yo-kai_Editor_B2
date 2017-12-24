@@ -30,41 +30,57 @@ MainWindow::MainWindow(QWidget* parent)
     this->manualEdit->setTreeWidget(this->mgr->getTw());
 
     YoukaiTab* yt = new YoukaiTab(this->mgr, this, 0x07);
-    //    Section1Tab* s1t = new Section1Tab(this->mgr, this, 0x01);
+    Section1Tab* s1t = new Section1Tab(this->mgr, this, 0x01);
     //    Section242Tab* s242t = new Section242Tab(this->mgr, this, 0xF2);
     //    GashaTab* gt = new GashaTab(this->mgr, this, 0x0E);
-    ItemTab* it = new ItemTab(this->mgr, this, 0x24);
-    BattleItemTab* bit = new BattleItemTab(this->mgr, this, 0x25);
-    EquipmentTab* et = new EquipmentTab(this->mgr, 0x5000, this, 0x26);
-    EquipmentTab* e2t = new EquipmentTab(this->mgr, 0x6000, this, 0x30);
-    //    ImportantTab* imt = new ImportantTab(this->mgr, this, 0x06);
-    //    MedaliumTab* mt = new MedaliumTab(this->mgr, this, 0x01, 0x774);
-    //    HackSlashTab* ht = new HackSlashTab(this->mgr, this, 0x27); // 0x27 for item box, 0x28 for backpack items
-    //    Section9Tab* s9t = new Section9Tab(this->mgr, this, 0x09);
+
+    // the item box
+    QTabWidget* itemboxTab = new QTabWidget(this->ui->tabWidget);
+    BattleItemTab* bit_ib = new BattleItemTab(this->mgr, this, 0x100); // battle item
+    EquipmentTab* et_ib = new EquipmentTab(this->mgr, 0x1000, GameConfig::HackslashEquipmentCountMax, this, 0x101); // equipment (both armor and protector)
+    ConsumeTab* cot_ib = new ConsumeTab(this->mgr, this, 0x102); // consume
+    ImportantTab* imt_ib = new ImportantTab(this->mgr, this, 0x103); // important
+    itemboxTab->addTab(bit_ib, tr("BATTLE_ITEM"));
+    itemboxTab->addTab(et_ib, tr("EQUIPMENT"));
+    itemboxTab->addTab(cot_ib, tr("ITEM"));
+    itemboxTab->addTab(imt_ib, tr("IMPORTANT"));
+
+    ItemTab* bit = new ItemTab(this->mgr, this, 0x25);
+    EquipmentTab* et = new EquipmentTab(this->mgr, 0x5000, GameConfig::EquipmentCountMax, this, 0x26);
+    EquipmentTab* e2t = new EquipmentTab(this->mgr, 0x6000, GameConfig::EquipmentCountMax, this, 0x30);
+    MedaliumTab* mt = new MedaliumTab(this->mgr, this, 0x01, 0x774);
+    Section9Tab* s9t = new Section9Tab(this->mgr, this, 0x09);
 
     this->ui->tabWidget->addTab(yt, tr("YOKAI"));
-    //    this->ui->tabWidget->addTab(s1t, tr("INFO1"));
+    this->ui->tabWidget->addTab(s1t, tr("INFO1"));
     //    this->ui->tabWidget->addTab(s242t, tr("INFO2"));
     //    this->ui->tabWidget->addTab(gt, tr("CRANK_A_KAI"));
-    this->ui->tabWidget->addTab(it, tr("ITEM"));
+
+    this->ui->tabWidget->addTab(itemboxTab, tr("ITEMBOX"));
+
     this->ui->tabWidget->addTab(bit, tr("BATTLE_ITEM"));
     this->ui->tabWidget->addTab(et, tr("WEAPON"));
     this->ui->tabWidget->addTab(e2t, tr("PROTECTOR"));
     //    this->ui->tabWidget->addTab(imt, tr("IMPORTANT"));
-    //    this->ui->tabWidget->addTab(mt, tr("MEDALLIUM"));
+    this->ui->tabWidget->addTab(mt, tr("MEDALLIUM"));
     //    this->ui->tabWidget->addTab(ht, tr("HACKSLASH_BATTLE"));
-    //    this->ui->tabWidget->addTab(s9t, tr("INFO"));
+    this->ui->tabWidget->addTab(s9t, tr("INFO2"));
 
     this->sectionTabs.append(yt);
-    this->sectionTabs.append(it);
+
+    this->sectionTabs.append(bit_ib);
+    this->sectionTabs.append(et_ib);
+    this->sectionTabs.append(cot_ib);
+    this->sectionTabs.append(imt_ib);
+
     this->sectionTabs.append(bit);
     this->sectionTabs.append(et);
     this->sectionTabs.append(e2t);
     //    this->sectionTabs.append(imt);
-    //    this->sectionTabs.append(mt);
+    this->sectionTabs.append(mt);
     //    this->sectionTabs.append(ht);
-    //    this->sectionTabs.append(s1t);
-    //    this->sectionTabs.append(s9t);
+    this->sectionTabs.append(s1t);
+    this->sectionTabs.append(s9t);
     //    this->sectionTabs.append(s242t);
     //    this->sectionTabs.append(gt);
 }

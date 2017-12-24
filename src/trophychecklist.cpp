@@ -36,7 +36,7 @@ void TrophyCheckList::apply()
             }
         }
     }
-    this->getMgr()->writeSection<quint8>(bronze, 0x38, 20);
-    this->getMgr()->writeSection<quint8>(silver, 0x39, 20);
-    this->getMgr()->writeSection<quint8>(gold, 0x3A, 20);
+    this->getMgr()->writeSection<quint8>(bronze, 0x48, 20);
+    this->getMgr()->writeSection<quint8>(silver, 0x49, 20);
+    this->getMgr()->writeSection<quint8>(gold, 0x4A, 20);
 }

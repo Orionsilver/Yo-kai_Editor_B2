@@ -20,11 +20,7 @@ Section9Tab::~Section9Tab()
 void Section9Tab::update()
 {
     quint32 money = this->read<quint32>(0x0);
-    quint32 JP = this->read<quint32>(0x4);
-    quint32 GP = this->read<quint32>(0x8);
     ui->moneyCB->setValue(money);
-    ui->JPCB->setValue(JP);
-    ui->GPCB->setValue(GP);
     ui->applyButton->setEnabled(true);
     ui->resetButton->setEnabled(true);
 }
@@ -32,6 +28,4 @@ void Section9Tab::update()
 void Section9Tab::apply()
 {
     this->write<quint32>(ui->moneyCB->value(), 0x00); // money
-    this->write<quint32>(ui->JPCB->value(), 0x04); // JP
-    this->write<quint32>(ui->GPCB->value(), 0x08); // GP
 }

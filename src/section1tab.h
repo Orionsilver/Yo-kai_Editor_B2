@@ -24,12 +24,9 @@ public slots:
 
 private:
     Ui::Section1Tab* ui;
-    static const quint8 noDeathFlag = 1 << 1;
-    FlagCheckList* flags;
     TrophyCheckList* trophies;
 private slots:
     void resetLegendary();
-    void resetDailyEvents();
 };
 
 #endif // SECTION1TAB_H

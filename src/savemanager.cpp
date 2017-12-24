@@ -25,7 +25,7 @@ bool SaveManager::loaded() const
     return this->isLoaded;
 }
 
-QByteArray SaveManager::getSectionData(quint8 sectionId, bool withHeaderFooter)
+QByteArray SaveManager::getSectionData(quint32 sectionId, bool withHeaderFooter)
 {
     Section* s = this->getSectionById(sectionId);
     if (!s) {
@@ -37,13 +37,17 @@ QByteArray SaveManager::getSectionData(quint8 sectionId, bool withHeaderFooter)
     return this->bodyData.mid(s->getOffset(), s->getSize());
 }
 
-void SaveManager::setSectionData(const QByteArray& in, quint8 sectionId)
+void SaveManager::setSectionData(const QByteArray& in, quint32 sectionId)
 {
     Section* s = this->getSectionById(sectionId);
     if (!s) {
         return;
     }
     this->bodyData.replace(s->getOffset(), s->getSize(), in.leftJustified(s->getSize(), '\0', true));
+    if (sectionId == 36 && s->childCount()) {
+        this->mergeSection36();
+        this->separateSection36();
+    }
 }
 
 quint32 SaveManager::readUint32(const QByteArray* in, int pos)
@@ -144,6 +148,78 @@ QByteArray SaveManager::genKey(QByteArray* decryptedHead, int index = -1)
         key.append(myRNG.next(0x100));
     }
     return key;
+}
+
+void SaveManager::separateSection36()
+{
+    Section* sec36 = this->getSectionById(36);
+    if (!sec36) {
+        return;
+    }
+    quint32 offset = sec36->getOffset();
+    quint32 size = GameConfig::Section36EntrySize * GameConfig::HackslashBattleCountMax;
+    Section* hbattle = new Section(0, 0x100 | GameConfig::HackslashBattleFlag, size, offset);
+    offset += size;
+    size = GameConfig::Section36EntrySize * GameConfig::HackslashEquipmentCountMax;
+    Section* hequipment = new Section(0, 0x100 | GameConfig::HackslashEquipmentFlag, size, offset);
+    offset += size;
+    size = GameConfig::Section36EntrySize * GameConfig::HackslashConsumeCountMax;
+    Section* hconsume = new Section(0, 0x100 | GameConfig::HackslashConsumeFlag, size, offset);
+    offset += size;
+    size = GameConfig::Section36EntrySize * GameConfig::HackslashImportantCountMax;
+    Section* himportant = new Section(0, 0x100 | GameConfig::HackslashImportantFlag, size, offset);
+    sec36->addChild(hbattle);
+    sec36->addChild(hequipment);
+    sec36->addChild(hconsume);
+    sec36->addChild(himportant);
+
+    QByteArray hbattleb;
+    QByteArray hequipmentb;
+    QByteArray hconsumeb;
+    QByteArray himportantb;
+
+    QByteArray s36data = this->getSectionData(36);
+    for (int i = 0; i < GameConfig::ItemCountMax; i++) {
+        quint16 num1 = this->readSection<quint16>(i * GameConfig::Section36EntrySize, 36);
+        quint32 id = this->readSection<quint16>(i * GameConfig::Section36EntrySize + 4, 36);
+        if (id == 0)
+            continue;
+        if ((num1 >> 12) == GameConfig::HackslashBattleFlag) {
+            hbattleb.append(s36data.mid(i * GameConfig::Section36EntrySize, GameConfig::Section36EntrySize));
+        } else if ((num1 >> 12) == GameConfig::HackslashEquipmentFlag) {
+            hequipmentb.append(s36data.mid(i * GameConfig::Section36EntrySize, GameConfig::Section36EntrySize));
+        } else if ((num1 >> 12) == GameConfig::HackslashConsumeFlag) {
+            hconsumeb.append(s36data.mid(i * GameConfig::Section36EntrySize, GameConfig::Section36EntrySize));
+        } else if ((num1 >> 12) == GameConfig::HackslashImportantFlag) {
+            himportantb.append(s36data.mid(i * GameConfig::Section36EntrySize, GameConfig::Section36EntrySize));
+        }
+    }
+    this->setSectionData(hbattleb, 0x100 | GameConfig::HackslashBattleFlag);
+    this->setSectionData(hequipmentb, 0x100 | GameConfig::HackslashEquipmentFlag);
+    this->setSectionData(hconsumeb, 0x100 | GameConfig::HackslashConsumeFlag);
+    this->setSectionData(himportantb, 0x100 | GameConfig::HackslashImportantFlag);
+}
+
+void SaveManager::mergeSection36()
+{
+    Section* sec36 = this->getSectionById(36);
+    if (!sec36)
+        return;
+    QByteArray s36data = this->getSectionData(36);
+
+    for (int i = 0, j = 0; j < GameConfig::ItemCountMax; j++) {
+        QDataStream st(s36data.mid(i * GameConfig::Section36EntrySize + 4, 4));
+        st.setByteOrder(QDataStream::LittleEndian); // not necessary as we only check whether it's zero or not
+        quint32 id;
+        st >> id;
+        if (id == 0) {
+            s36data.remove(i * GameConfig::Section36EntrySize, GameConfig::Section36EntrySize);
+        } else {
+            i++;
+        }
+    }
+    qDeleteAll(sec36->takeChildren());
+    this->setSectionData(s36data, 36);
 }
 
 Error::ErrorCode SaveManager::loadFile(QString path)
@@ -298,7 +374,7 @@ Error::ErrorCode SaveManager::writeFile(QString path)
  * Though the game uses cp932, which extends Shift_JIS,
  * I ignore the difference and treat as normal Shift_JIS.
  */
-QString SaveManager::readString(int offset, int lenInBytes, quint8 sectionId)
+QString SaveManager::readString(int offset, int lenInBytes, quint32 sectionId)
 {
     Section* s = this->getSectionById(sectionId);
     if (!s) {
@@ -323,7 +399,7 @@ QString SaveManager::readString(int offset, int lenInBytes, quint8 sectionId)
     return out;
 }
 
-void SaveManager::writeString(QString in, int offset, int lenInBytes, quint8 sectionId)
+void SaveManager::writeString(QString in, int offset, int lenInBytes, quint32 sectionId)
 {
     Section* s = this->getSectionById(sectionId);
     if (!s) {
@@ -348,7 +424,7 @@ void SaveManager::writeString(QString in, int offset, int lenInBytes, quint8 sec
     this->bodyData.replace(s->getOffset() + offset, str.size(), str);
 }
 
-QVector<bool> SaveManager::readBoolVector(int offset, int count, quint8 sectionId)
+QVector<bool> SaveManager::readBoolVector(int offset, int count, quint32 sectionId)
 {
     /*
      * The argument count is the minimum element count in the returned QVector<bool>
@@ -364,7 +440,7 @@ QVector<bool> SaveManager::readBoolVector(int offset, int count, quint8 sectionI
     return out;
 }
 
-void SaveManager::writeBoolVector(const QVector<bool>& v, int offset, quint8 sectionId)
+void SaveManager::writeBoolVector(const QVector<bool>& v, int offset, quint32 sectionId)
 {
     /*
      * This function assumes v has 8*n elements, where n is a natural number.
@@ -415,7 +491,7 @@ Error::ErrorCode SaveManager::parseSavedata(const QByteArray& bs)
         }
         if ((h1 & 0xFFFF) == 0xFFFE) {
             quint32 h2, size;
-            quint8 id;
+            quint32 id;
             ds >> h2;
             pos += 4;
             id = h2 & 0xFF;
@@ -469,6 +545,10 @@ Error::ErrorCode SaveManager::parseSavedata(const QByteArray& bs)
     tw->clear();
     tw->addTopLevelItem(root);
     this->bodyData = bs;
+
+    // separate section 36 (needed to separete item tabs)
+    this->separateSection36();
+
     return Error::SUCCESS;
 err:
     delete root;
@@ -479,6 +559,10 @@ void SaveManager::writeout(QBuffer& f, bool legitSort)
 {
     QTreeWidgetItem* root_ = this->tw->topLevelItem(0);
     Section* root;
+
+    // merge section 36 temporarily
+    mergeSection36();
+
     if (root_ && root_->type() == Section::Type) {
         root = static_cast<Section*>(root_);
     } else {
@@ -488,6 +572,9 @@ void SaveManager::writeout(QBuffer& f, bool legitSort)
         this->reorderF3();
     }
     this->writeoutRec(f, root);
+
+    // separate it again
+    separateSection36();
 }
 
 void SaveManager::writeoutRec(QBuffer& f, Section* s)
@@ -537,7 +624,7 @@ void SaveManager::reorderF3()
     }
 }
 
-Section* SaveManager::getSectionById(quint8 id)
+Section* SaveManager::getSectionById(quint32 id)
 {
     QString sid = QString::number(id, 10);
     QList<QTreeWidgetItem*> l = this->tw->findItems(sid, Qt::MatchExactly | Qt::MatchRecursive);
@@ -550,6 +637,11 @@ Section* SaveManager::getSectionById(quint8 id)
 int SaveManager::indexOfRaw(const QByteArray& ba, int from) const
 {
     return this->bodyData.indexOf(ba, from);
+}
+
+bool SaveManager::isVirtualSection(quint32 sectionId)
+{
+    return sectionId > 0xFF;
 }
 
 QByteArray* SaveManager::processYW(QByteArray& in, bool isEncrypt)
@@ -589,20 +681,20 @@ QByteArray* SaveManager::processYW(QByteArray& in, bool isEncrypt)
 }
 
 // explicit instantiations
-template float SaveManager::readSection(int offset, quint8 sectionId);
-template qint32 SaveManager::readSection(int offset, quint8 sectionId);
-template quint32 SaveManager::readSection(int offset, quint8 sectionId);
-template qint16 SaveManager::readSection(int offset, quint8 sectionId);
-template quint16 SaveManager::readSection(int offset, quint8 sectionId);
-template qint8 SaveManager::readSection(int offset, quint8 sectionId);
-template quint8 SaveManager::readSection(int offset, quint8 sectionId);
-template void SaveManager::writeSection(float val, int offset, quint8 sectionId);
-template void SaveManager::writeSection(qint32 val, int offset, quint8 sectionId);
-template void SaveManager::writeSection(quint32 val, int offset, quint8 sectionId);
-template void SaveManager::writeSection(qint16 val, int offset, quint8 sectionId);
-template void SaveManager::writeSection(quint16 val, int offset, quint8 sectionId);
-template void SaveManager::writeSection(qint8 val, int offset, quint8 sectionId);
-template void SaveManager::writeSection(quint8 val, int offset, quint8 sectionId);
+template float SaveManager::readSection(int offset, quint32 sectionId);
+template qint32 SaveManager::readSection(int offset, quint32 sectionId);
+template quint32 SaveManager::readSection(int offset, quint32 sectionId);
+template qint16 SaveManager::readSection(int offset, quint32 sectionId);
+template quint16 SaveManager::readSection(int offset, quint32 sectionId);
+template qint8 SaveManager::readSection(int offset, quint32 sectionId);
+template quint8 SaveManager::readSection(int offset, quint32 sectionId);
+template void SaveManager::writeSection(float val, int offset, quint32 sectionId);
+template void SaveManager::writeSection(qint32 val, int offset, quint32 sectionId);
+template void SaveManager::writeSection(quint32 val, int offset, quint32 sectionId);
+template void SaveManager::writeSection(qint16 val, int offset, quint32 sectionId);
+template void SaveManager::writeSection(quint16 val, int offset, quint32 sectionId);
+template void SaveManager::writeSection(qint8 val, int offset, quint32 sectionId);
+template void SaveManager::writeSection(quint8 val, int offset, quint32 sectionId);
 
 template float SaveManager::readRaw(int offset);
 template qint32 SaveManager::readRaw(int offset);
@@ -620,7 +712,7 @@ template void SaveManager::writeRaw(qint8 val, int offset);
 template void SaveManager::writeRaw(quint8 val, int offset);
 
 template <class V>
-V SaveManager::readSection(int offset, quint8 sectionId)
+V SaveManager::readSection(int offset, quint32 sectionId)
 {
     if (offset < 0)
         return V(0);
@@ -638,7 +730,7 @@ V SaveManager::readSection(int offset, quint8 sectionId)
 }
 
 template <class V>
-void SaveManager::writeSection(V val, int offset, quint8 sectionId)
+void SaveManager::writeSection(V val, int offset, quint32 sectionId)
 {
     if (offset < 0)
         return;

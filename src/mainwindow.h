@@ -5,10 +5,10 @@
 
 #include "battleitemtab.h"
 #include "cheatcodedialog.h"
+#include "consumetab.h"
 #include "equipmenttab.h"
 #include "error.h"
 #include "gashatab.h"
-#include "hackslashtab.h"
 #include "importanttab.h"
 #include "itemtab.h"
 #include "manualeditdialog.h"

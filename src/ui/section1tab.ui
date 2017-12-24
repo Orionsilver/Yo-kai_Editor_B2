@@ -2,14 +2,6 @@
 <ui version="4.0">
  <class>Section1Tab</class>
  <widget class="QWidget" name="Section1Tab">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>546</width>
-    <height>252</height>
-   </rect>
-  </property>
   <property name="windowTitle">
    <string notr="true">Form</string>
   </property>
@@ -62,23 +54,6 @@
       </spacer>
      </item>
      <item>
-      <widget class="QCheckBox" name="noDeathCB">
-       <property name="text">
-        <string>NO_DEATH</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="resetDaily">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="text">
-        <string>RESET_DAILYEVENTS</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QPushButton" name="legendResetButton">
        <property name="enabled">
         <bool>false</bool>
@@ -105,6 +80,19 @@
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <spacer name="horizontalSpacer_8">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
      <item>
       <layout class="QVBoxLayout" name="trophyLayout">
        <item>
@@ -134,32 +122,17 @@
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="flagLayout">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QPushButton" name="flagCheckAll">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>CHECK_ALL</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="flagUncheckAll">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>UNCHECK_ALL</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
+      <spacer name="horizontalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>

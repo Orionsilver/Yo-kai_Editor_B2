@@ -73,7 +73,7 @@ YoukaiTab::YoukaiTab(SaveManager* mgr, QWidget* parent, int sectionId)
     this->editors.append(new BitEditor(this, form->flag4CB, 0x4A, 0));
     this->editors.append(new BitEditor(this, form->flag5CB, 0x4A, 1));
     this->editors.append(new BitEditor(this, form->flag6CB, 0x4A, 2));
-    this->editors.append(new BitEditor(this, form->flag7CB, 0x4A, 3));
+    this->editors.append(new BitEditor(this, form->flag7CB, 0x4A, 4));
 }
 
 YoukaiTab::~YoukaiTab()
@@ -84,7 +84,7 @@ YoukaiTab::~YoukaiTab()
 void YoukaiTab::setButtonsEnabled(bool s)
 {
     ListTab::setButtonsEnabled(s);
-    //    form->youkaiNumApplyB->setEnabled(true);
+    form->youkaiNumApplyB->setEnabled(true);
     form->updateIDButton->setEnabled(true);
     form->fixIVButton->setEnabled(true);
     //    form->allPoseB->setEnabled(true);
@@ -99,7 +99,7 @@ void YoukaiTab::updateYoukaiCount()
     if (ans == QMessageBox::Ok) {
         this->writeSelectedItem();
         for (int i = 0; i < this->getItemsCount(); ++i) {
-            quint32 num = this->read<quint32>(0x00 + 0x54 * i);
+            quint32 num = this->read<quint32>(0x00 + 0x4C * i);
             this->getMgr()->writeSection<quint32>(num, 0x00 + 0x04 * i, 0x0A);
         }
         this->update();

@@ -17,7 +17,7 @@ class EquipmentTab : public ListTab, private Ui::EquipmentTabForm {
     Q_OBJECT
 
 public:
-    explicit EquipmentTab(SaveManager* mgr, int num1Offset, QWidget* parent = 0, int sectionId = -1);
+    explicit EquipmentTab(SaveManager* mgr, int num1Offset, int itemCount, QWidget* parent = 0, int sectionId = -1);
     ~EquipmentTab();
 
 private:

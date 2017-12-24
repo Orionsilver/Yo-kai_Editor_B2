@@ -2,10 +2,11 @@
 
 #include "equipmenttab.h"
 
+#include "dataeditor/biteditor.h"
 #include "dataeditor/integereditor.h"
 #include "dataeditor/listeditor.h"
 
-EquipmentTab::EquipmentTab(SaveManager* mgr, int num1Offset, QWidget* parent, int sectionId)
+EquipmentTab::EquipmentTab(SaveManager* mgr, int num1Offset, int itemCount, QWidget* parent, int sectionId)
     : ListTab(mgr, parent, sectionId)
     , form(new Ui::EquipmentTabForm)
 {
@@ -14,10 +15,10 @@ EquipmentTab::EquipmentTab(SaveManager* mgr, int num1Offset, QWidget* parent, in
     ui->form->addWidget(w);
 
     this->setNum1Offset(num1Offset);
-    this->setItemsCount(GameConfig::EquipmentCountMax);
+    this->setItemsCount(itemCount);
     this->setItemSize(0x14);
 
-    for (int i = 0; i < GameConfig::EquipmentCountMax; ++i) {
+    for (int i = 0; i < itemCount; ++i) {
         ui->listWidget->addItem(QString(""));
     }
 
@@ -40,6 +41,15 @@ EquipmentTab::EquipmentTab(SaveManager* mgr, int num1Offset, QWidget* parent, in
     this->editors.append(new IntegerEditor(this, form->count2Label, form->count2SB, 0xB, 8, false));
     this->editors.append(new ListEditor(this, form->skill1Label, form->skill1CB, 0xC, 32, false));
     this->editors.append(new ListEditor(this, form->skill2Label, form->skill2CB, 0x10, 32, false));
+
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 0));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 1));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 2));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 3));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 4));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 5));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 6));
+    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 7));
 }
 
 EquipmentTab::~EquipmentTab()

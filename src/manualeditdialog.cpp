@@ -11,7 +11,7 @@ ManualEditDialog::ManualEditDialog(QWidget* parent, SaveManager* mgr)
     , tree(0)
 {
     ui->setupUi(this);
-    connect(ui->buttonBox->button(QDialogButtonBox::Save), SIGNAL(pressed()), SLOT(saveCurrentSection()));
+    connect(ui->buttonBox->button(QDialogButtonBox::Save), SIGNAL(clicked(bool)), SLOT(saveCurrentSection()));
 }
 
 ManualEditDialog::~ManualEditDialog()
@@ -38,9 +38,8 @@ void ManualEditDialog::loadCurrentSection()
 void ManualEditDialog::saveCurrentSection()
 {
     if (this->tree && this->tree->currentItem()) {
-        quint8 sectionId = this->tree->currentItem()->text(0).toInt();
-        QHexEditDataReader reader(ui->frame->data());
-        QByteArray data = reader.read(0, this->mgr->getSectionById(sectionId)->getSize());
+        quint32 sectionId = this->tree->currentItem()->text(0).toInt();
+        QByteArray data = ui->frame->document()->read(0, this->mgr->getSectionById(sectionId)->getSize());
         this->mgr->setSectionData(data, sectionId);
     }
 }
@@ -58,14 +57,18 @@ void ManualEditDialog::setTreeWidget(QTreeWidget* t)
         SLOT(loadCurrentSection()));
 }
 
-void ManualEditDialog::load(quint8 section)
+void ManualEditDialog::load(quint32 section)
 {
+    QHexDocument* old = this->myData;
     if (this->tree) {
-        QHexEditData* oldData = this->myData;
-        this->myData = QHexEditData::fromMemory(this->mgr->getSectionData(section));
-        ui->frame->setData(this->myData);
-        if (oldData) {
-            delete oldData;
+        this->myData = QHexDocument::fromMemory(this->mgr->getSectionData(section));
+        ui->frame->setDocument(this->myData);
+        if (old) {
+            // The destructor of QHexDocument is private,
+            // so call the destructor by making it a child of ephemeral QObject,
+            // and deleting the parent QObject immediately.
+            QObject tmp;
+            old->setParent(&tmp);
         }
     }
 }

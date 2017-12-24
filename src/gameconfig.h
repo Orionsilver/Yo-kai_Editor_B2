@@ -15,12 +15,21 @@ public:
     static const int BattleItemCountMax = 9;
     static const int EquipmentCountMax = 4;
     static const int ImportantCountMax = 240;
-    static const int SoulCountMax = 100;
-    static const int HackSlashCountMax = 48; // item box
-    static const int BustersEquipmentCountMax = 4;
-    static const int BustersItemBoxCountMax = 48;
-    static const int BustersItemPouchCountMax = 9;
-    static const int BustersHiddenTreasureCountMax = 16;
+
+    // The following values are determined for the sake of convenience.
+    // They aren't based on the size of the section, unlike others.
+    // The sum of them should be less than or equal to ItemCountMax.
+    static const int Section36EntrySize = 0x14;
+    static const int HackslashBattleCountMax = 66;
+    static const int HackslashEquipmentCountMax = 506;
+    static const int HackslashConsumeCountMax = 308;
+    static const int HackslashImportantCountMax = 128;
+
+    // num1Offset >> 12
+    static const quint16 HackslashBattleFlag = 0;
+    static const quint16 HackslashEquipmentFlag = 1;
+    static const quint16 HackslashConsumeFlag = 2;
+    static const quint16 HackslashImportantFlag = 3;
 };
 
 #endif // GAMECONFIG

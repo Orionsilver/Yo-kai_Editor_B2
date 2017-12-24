@@ -19,7 +19,6 @@ class ItemTab : public ListTab, private Ui::ItemTabForm {
 public:
     explicit ItemTab(SaveManager* mgr, QWidget* parent = 0, int sectionId = -1);
     ~ItemTab();
-    void setButtonsEnabled(bool s);
 public slots:
     virtual void update();
 
