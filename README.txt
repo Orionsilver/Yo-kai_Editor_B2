@@ -23,7 +23,7 @@ GUIから編集するほか、バイナリエディタ(Ctrl+E または Cmd+E)�
 5. 1. で使用したアプリケーションを使って、game*.ywを書き戻す。
 
 ## ビルド
-Qt (5.5以降)、Crypto++、QHexEdit が必要です。QHexEdit はリポジトリに含まれています。
+Qt (5.6以降)、Crypto++、QHexEdit が必要です。QHexEdit はリポジトリに含まれています。
 http://www.qt.io/
 https://www.cryptopp.com
 https://github.com/Dax89/QHexEdit
