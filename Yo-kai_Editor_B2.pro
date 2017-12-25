@@ -144,10 +144,15 @@ QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
 QMAKE_TARGET_BUNDLE_PREFIX = jp.togenyan
 }
 
-win32:LIBS += -L$$PWD/../lib/ -lcryptlib
-
-win32:INCLUDEPATH += $$PWD/../include
-win32:DEPENDPATH += $$PWD/../include
+win32 {
+    CONFIG(debug, debug|release) {
+        LIBS += -L$$PWD/../lib_debug/ -lcryptlib
+    }
+    CONFIG(release, debug|release) {
+        LIBS += -L$$PWD/../lib/ -lcryptlib
+    }
+    INCLUDEPATH += $$PWD/../include
+}
 
 RESOURCES += \
     resources.qrc
