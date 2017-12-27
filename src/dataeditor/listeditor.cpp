@@ -93,3 +93,20 @@ QString ListEditor::text(int offset)
     }
     return tr("UNKNOWN");
 }
+
+quint32 ListEditor::comboboxData(int index)
+{
+    if (!this->editor)
+        return 0;
+    if (index >= this->editor->count() || index < 0)
+        return 0;
+    QVariant v = this->editor->itemData(index);
+    return v.toUInt();
+}
+
+int ListEditor::count() const
+{
+    if (!this->editor)
+        return 0;
+    return this->editor->count();
+}

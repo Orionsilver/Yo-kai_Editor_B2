@@ -39,6 +39,7 @@ public slots:
     void clearFilter();
     virtual void automaticNumbering();
     void clearData();
+    void insertAllItems();
 
 private:
     int itemsCount;

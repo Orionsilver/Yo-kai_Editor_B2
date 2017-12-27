@@ -57,3 +57,11 @@ EquipmentTab::~EquipmentTab()
 {
     delete form;
 }
+
+void EquipmentTab::setButtonsEnabled(bool s)
+{
+    ListTab::setButtonsEnabled(s);
+    if (this->getItemsCount() <= this->editors.count()) {
+        ui->addAllButton->setEnabled(false);
+    }
+}

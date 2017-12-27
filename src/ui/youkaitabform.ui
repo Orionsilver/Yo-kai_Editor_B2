@@ -2,6 +2,14 @@
 <ui version="4.0">
  <class>YoukaiTabForm</class>
  <widget class="QWidget" name="YoukaiTabForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>524</height>
+   </rect>
+  </property>
   <property name="windowTitle">
    <string notr="true">Form</string>
   </property>
@@ -315,7 +323,7 @@
           <item>
            <widget class="QCheckBox" name="flag6CB">
             <property name="text">
-             <string notr="true">IS_NEW</string>
+             <string>IS_NEW</string>
             </property>
            </widget>
           </item>
@@ -337,6 +345,12 @@
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
      </property>
     </spacer>
    </item>

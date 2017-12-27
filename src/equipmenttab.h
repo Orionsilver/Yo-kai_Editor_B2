@@ -20,6 +20,9 @@ public:
     explicit EquipmentTab(SaveManager* mgr, int num1Offset, int itemCount, QWidget* parent = 0, int sectionId = -1);
     ~EquipmentTab();
 
+public slots:
+    virtual void setButtonsEnabled(bool s);
+
 private:
     Ui::EquipmentTabForm* form;
 };

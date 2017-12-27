@@ -12,6 +12,8 @@ public:
     void apply(int offset);
     void clear();
     QString text(int offset);
+    quint32 comboboxData(int index);
+    int count() const;
 
 private:
     quint32 data(int offset);

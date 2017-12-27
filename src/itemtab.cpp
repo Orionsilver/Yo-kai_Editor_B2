@@ -72,3 +72,9 @@ void ItemTab::update()
 {
     ListTab::update();
 }
+
+void ItemTab::setButtonsEnabled(bool s)
+{
+    ListTab::setButtonsEnabled(s);
+    ui->addAllButton->setEnabled(false);
+}

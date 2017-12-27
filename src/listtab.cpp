@@ -17,6 +17,7 @@ ListTab::ListTab(SaveManager* mgr, QWidget* parent, int sectionId)
 {
     ui->setupUi(this);
     connect(ui->listWidget, SIGNAL(currentRowChanged(int)), SLOT(loadCurrentItem()));
+    connect(ui->addAllButton, SIGNAL(clicked(bool)), SLOT(insertAllItems()));
     connect(ui->autonumberingB, SIGNAL(clicked(bool)), SLOT(automaticNumbering()));
     connect(ui->resetButton, SIGNAL(clicked(bool)), SLOT(loadCurrentItem()));
     connect(ui->applyButton, SIGNAL(clicked(bool)), SLOT(writeSelectedItem()));
@@ -65,6 +66,7 @@ void ListTab::setButtonsEnabled(bool s)
     ui->resetButton->setEnabled(s);
     ui->autonumberingB->setEnabled(s);
     ui->clearB->setEnabled(s);
+    ui->addAllButton->setEnabled(s);
 }
 
 void ListTab::update()
@@ -167,6 +169,26 @@ void ListTab::clearData()
     }
     foreach (DataEditor* e, this->editors) {
         e->markAsClean();
+    }
+    this->update();
+}
+
+void ListTab::insertAllItems()
+{
+    int ans = QMessageBox::question(this, tr("CONFIRM"),
+        tr("INSERT_ALL_ENTRIES_WARNING"),
+        QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+    if (ans != QMessageBox::Ok) {
+        return;
+    }
+
+    if (!this->primaryEditor)
+        return;
+
+    int s = this->primaryEditor->count();
+    for (int i = 0; i < s; ++i) {
+        this->write<quint32>(
+            this->primaryEditor->comboboxData(i), itemSize * i + 4);
     }
     this->update();
 }

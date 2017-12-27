@@ -21,6 +21,7 @@ public:
     ~ItemTab();
 public slots:
     virtual void update();
+    virtual void setButtonsEnabled(bool s);
 
 private:
     Ui::ItemTabForm* form;

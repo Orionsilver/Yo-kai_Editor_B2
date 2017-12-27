@@ -2,14 +2,6 @@
 <ui version="4.0">
  <class>ListTab</class>
  <widget class="QWidget" name="ListTab">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>714</width>
-    <height>400</height>
-   </rect>
-  </property>
   <property name="windowTitle">
    <string notr="true">Form</string>
   </property>
@@ -84,6 +76,16 @@
            </property>
            <property name="text">
             <string>AUTOMATIC_NUMBERING</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="addAllButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>ADD_ALL</string>
            </property>
           </widget>
          </item>
