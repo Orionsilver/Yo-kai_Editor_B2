@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #ifndef MEDALIUMTAB_H
 #define MEDALIUMTAB_H
 

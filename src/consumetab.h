@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #ifndef CONSUMETAB_H
 #define CONSUMETAB_H
 

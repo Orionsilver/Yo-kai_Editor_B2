@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #ifndef YOUKAITAB_H
 #define YOUKAITAB_H
 

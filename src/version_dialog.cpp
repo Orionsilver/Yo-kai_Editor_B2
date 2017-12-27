@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #include "version_dialog.h"
 #include "ui_version_dialog.h"
 

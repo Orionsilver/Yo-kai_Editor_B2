@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #ifndef CRC32_H
 #define CRC32_H
 

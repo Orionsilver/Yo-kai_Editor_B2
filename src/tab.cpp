@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #include "tab.h"
 
 Tab::Tab(SaveManager* mgr, QWidget* parent, int sectionId)

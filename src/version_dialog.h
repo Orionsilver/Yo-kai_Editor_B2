@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #ifndef VERSION_DIALOG_H
 #define VERSION_DIALOG_H
 

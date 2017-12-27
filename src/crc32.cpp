@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #include "crc32.h"
 
 const quint32 CRC32::crc32_tab[] = {

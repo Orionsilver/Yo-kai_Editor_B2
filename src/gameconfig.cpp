@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #include "gameconfig.h"
 
 const quint8 GameConfig::defaultOrder[GameConfig::SECTIONS_CNT] = {

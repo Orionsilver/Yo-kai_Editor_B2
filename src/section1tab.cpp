@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #include "section1tab.h"
 #include "ui_section1tab.h"
 #include <QMessageBox>

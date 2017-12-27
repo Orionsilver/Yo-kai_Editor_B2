@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #include "youkaichecklist.h"
 
 YoukaiCheckList::YoukaiCheckList(int sectionId, int offset, SaveManager* mgr, QWidget* parent)

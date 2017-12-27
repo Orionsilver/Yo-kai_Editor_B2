@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #include "gashatab.h"
 #include "ui_gashatab.h"
 

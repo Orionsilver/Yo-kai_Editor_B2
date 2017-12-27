@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #include "ywcipher.h"
 
 const qint32 YWCipher::oddPrimes[] = {

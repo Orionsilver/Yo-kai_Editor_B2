@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #include "checklist.h"
 
 CheckList::CheckList(int sectionId, int offset, SaveManager* mgr, QWidget* parent)

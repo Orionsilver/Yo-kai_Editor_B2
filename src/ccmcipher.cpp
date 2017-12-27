@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #include "ccmcipher.h"
 
 static const int TAG_SIZE = 16;

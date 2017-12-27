@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #include "medaliumtab.h"
 #include "ui_medaliumtab.h"
 

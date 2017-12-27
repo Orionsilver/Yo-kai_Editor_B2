@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #ifndef CHECKLIST_H
 #define CHECKLIST_H
 

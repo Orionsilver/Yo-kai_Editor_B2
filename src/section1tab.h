@@ -1,5 +1,3 @@
-#pragma execution_character_set("utf-8")
-
 #ifndef SECTION1TAB_H
 #define SECTION1TAB_H
 
