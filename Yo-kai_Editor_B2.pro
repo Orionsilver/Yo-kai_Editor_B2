@@ -152,6 +152,7 @@ win32 {
         LIBS += -L$$PWD/../lib/ -lcryptlib
     }
     INCLUDEPATH += $$PWD/../include
+    QMAKE_CXXFLAGS += /utf-8
 }
 
 RESOURCES += \
