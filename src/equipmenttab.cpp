@@ -38,6 +38,7 @@ EquipmentTab::EquipmentTab(SaveManager* mgr, int num1Offset, int itemCount, QWid
     this->editors.append(new IntegerEditor(this, form->num1Label, form->num1SB, 0x00, 16, false));
     this->editors.append(new IntegerEditor(this, form->num2Label, form->num2SB, 0x02, 16, false));
     this->editors.append(itemE);
+    this->editors.append(new IntegerEditor(this, form->countLabel, form->countSB, 0xA, 8, false));
     this->editors.append(new IntegerEditor(this, form->count2Label, form->count2SB, 0xB, 8, false));
     this->editors.append(new ListEditor(this, form->skill1Label, form->skill1CB, 0xC, 32, false));
     this->editors.append(new ListEditor(this, form->skill2Label, form->skill2CB, 0x10, 32, false));
