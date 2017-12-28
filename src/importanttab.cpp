@@ -31,6 +31,7 @@ ImportantTab::ImportantTab(SaveManager* mgr, QWidget* parent, int sectionId)
     this->setPrimaryEditor(itemE);
     this->editors.append(new IntegerEditor(this, form->num1Label, form->num1SB, 0x00, 16, false));
     this->editors.append(new IntegerEditor(this, form->num2Label, form->num2SB, 0x02, 16, false));
+    this->editors.append(new IntegerEditor(this, form->countLabel, form->countSB, 0x0A, 8, false));
     this->editors.append(itemE);
 
     this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 0));
