@@ -718,6 +718,8 @@ V SaveManager::readSection(int offset, quint32 sectionId)
     if (!s) {
         return V(0);
     }
+    if ((unsigned int)offset >= s->getSize())
+        return V(0);
     QDataStream ds(&this->bodyData, QIODevice::ReadOnly);
     ds.setFloatingPointPrecision(QDataStream::SinglePrecision);
     ds.setByteOrder(QDataStream::LittleEndian);
@@ -736,6 +738,8 @@ void SaveManager::writeSection(V val, int offset, quint32 sectionId)
     if (!s) {
         return;
     }
+    if ((unsigned int)offset >= s->getSize())
+        return;
     QDataStream ds(&this->bodyData, QIODevice::WriteOnly);
     ds.setFloatingPointPrecision(QDataStream::SinglePrecision);
     ds.setByteOrder(QDataStream::LittleEndian);
@@ -765,6 +769,6 @@ void SaveManager::writeRaw(V val, int offset)
     QDataStream ds(&this->bodyData, QIODevice::WriteOnly);
     ds.setFloatingPointPrecision(QDataStream::SinglePrecision);
     ds.setByteOrder(QDataStream::LittleEndian);
-    ds.skipRawData(offset);
+    ds.device()->seek(offset);
     ds << val;
 }
