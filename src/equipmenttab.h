@@ -20,9 +20,11 @@ public:
 
 public slots:
     virtual void setButtonsEnabled(bool s);
+    void enchantAll();
 
 private:
     Ui::EquipmentTabForm* form;
+    QHash<quint32, quint8> enchantability;
 };
 
 #endif // EQUIPMENTTAB_H

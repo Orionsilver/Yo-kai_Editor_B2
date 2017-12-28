@@ -50,15 +50,6 @@ ItemTab::ItemTab(SaveManager* mgr, QWidget* parent, int sectionId)
     this->editors.append(new IntegerEditor(this, form->enchantmentLabel, form->enchantmentSB, 0xB, 8, true));
     this->editors.append(new ListEditor(this, form->skill1Label, form->skill1CB, 0x0C, 32, false));
     this->editors.append(new ListEditor(this, form->skill2Label, form->skill2CB, 0x10, 32, false));
-
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 0));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 1));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 2));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 3));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 4));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 5));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 6));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 7));
 }
 
 ItemTab::~ItemTab()

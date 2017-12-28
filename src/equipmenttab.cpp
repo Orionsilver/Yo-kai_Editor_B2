@@ -4,6 +4,8 @@
 #include "dataeditor/integereditor.h"
 #include "dataeditor/listeditor.h"
 
+#include <QMessageBox>
+
 EquipmentTab::EquipmentTab(SaveManager* mgr, int num1Offset, int itemCount, QWidget* parent, int sectionId)
     : ListTab(mgr, parent, sectionId)
     , form(new Ui::EquipmentTabForm)
@@ -23,6 +25,7 @@ EquipmentTab::EquipmentTab(SaveManager* mgr, int num1Offset, int itemCount, QWid
     /* intert items into combobox */
     foreach (const dataentry_t& it, GameData::getInstance().getData("hackslash_equipment")) {
         form->itemCB->addItem(it.second.value("name"), it.first);
+        this->enchantability.insert(it.first, it.second.value("enchant").toUInt());
     }
     foreach (const dataentry_t& it, GameData::getInstance().getData("equipment_skill")) {
         form->skill1CB->addItem(it.second.value("name"), it.first);
@@ -41,14 +44,7 @@ EquipmentTab::EquipmentTab(SaveManager* mgr, int num1Offset, int itemCount, QWid
     this->editors.append(new ListEditor(this, form->skill1Label, form->skill1CB, 0xC, 32, false));
     this->editors.append(new ListEditor(this, form->skill2Label, form->skill2CB, 0x10, 32, false));
 
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 0));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 1));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 2));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 3));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 4));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 5));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 6));
-    this->editors.append(new BitEditor(this, form->flag0CB, 0xB, 7));
+    connect(form->enchantB, SIGNAL(clicked(bool)), SLOT(enchantAll()));
 }
 
 EquipmentTab::~EquipmentTab()
@@ -61,5 +57,24 @@ void EquipmentTab::setButtonsEnabled(bool s)
     ListTab::setButtonsEnabled(s);
     if (this->getItemsCount() <= this->editors.count()) {
         ui->addAllButton->setEnabled(false);
+    }
+}
+
+void EquipmentTab::enchantAll()
+{
+    int ans = QMessageBox::question(this, tr("CONFIRM"),
+        tr("ENCHANT_ALL_WARNING"),
+        QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+    if (ans == QMessageBox::Ok) {
+        this->writeSelectedItem();
+        for (int i = 0; i < this->getItemsCount(); ++i) {
+            quint32 eq_id = this->read<quint32>(0x04 + 0x14 * i);
+            quint8 enchantability = std::min((quint8)127, this->enchantability.value(eq_id, -1));
+            if (eq_id && enchantability >= 0) {
+                this->write<quint8>(enchantability, 0xB + 0x14 * i);
+            }
+        }
+
+        this->update();
     }
 }
