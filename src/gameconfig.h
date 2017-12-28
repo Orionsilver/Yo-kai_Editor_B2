@@ -19,9 +19,9 @@ public:
     // The sum of them should be less than or equal to ItemCountMax.
     static const int Section36EntrySize = 0x14;
     static const int HackslashBattleCountMax = 66;
-    static const int HackslashEquipmentCountMax = 506;
+    static const int HackslashEquipmentCountMax = 402; // confirmed
     static const int HackslashConsumeCountMax = 308;
-    static const int HackslashImportantCountMax = 128;
+    static const int HackslashImportantCountMax = 102; //confirmed
 
     // num1Offset >> 12
     static const quint16 HackslashBattleFlag = 0;
