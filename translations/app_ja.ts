@@ -4,74 +4,39 @@
 <context>
     <name>BattleItemTabForm</name>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="12"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="20"/>
         <source>GENERAL</source>
         <translation>基本</translation>
     </message>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="20"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="28"/>
         <source>NUM1</source>
         <translation>番号1</translation>
     </message>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="34"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="42"/>
         <source>NUM2</source>
         <translation>番号2</translation>
     </message>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="48"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="56"/>
         <source>TYPE</source>
         <translation>種類</translation>
     </message>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="65"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="73"/>
         <source>QTY</source>
         <translation>個数</translation>
     </message>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="84"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="92"/>
         <source>FLAGS</source>
         <translation>フラグ</translation>
     </message>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="90"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="97"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="147"/>
         <source>STACKABLE</source>
         <translation>スタック可能</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="104"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="111"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="118"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="125"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="132"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="139"/>
-        <source>7</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -215,74 +180,39 @@
 <context>
     <name>ConsumeTabForm</name>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="12"/>
+        <location filename="../src/ui/consumetabform.ui" line="20"/>
         <source>GENERAL</source>
         <translation>基本</translation>
     </message>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="20"/>
+        <location filename="../src/ui/consumetabform.ui" line="28"/>
         <source>NUM1</source>
         <translation>番号1</translation>
     </message>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="34"/>
+        <location filename="../src/ui/consumetabform.ui" line="42"/>
         <source>NUM2</source>
         <translation>番号2</translation>
     </message>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="48"/>
+        <location filename="../src/ui/consumetabform.ui" line="56"/>
         <source>TYPE</source>
         <translation>種類</translation>
     </message>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="65"/>
+        <location filename="../src/ui/consumetabform.ui" line="73"/>
         <source>QTY</source>
         <translation>個数</translation>
     </message>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="84"/>
+        <location filename="../src/ui/consumetabform.ui" line="92"/>
         <source>FLAGS</source>
         <translation>フラグ</translation>
     </message>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="90"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="97"/>
+        <location filename="../src/ui/consumetabform.ui" line="147"/>
         <source>STACKABLE</source>
         <translation>スタック可能</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="104"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="111"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="118"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="125"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="132"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="139"/>
-        <source>7</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -341,93 +271,74 @@
         <source>UNKNOWN</source>
         <translation type="vanished">(不明)</translation>
     </message>
+    <message>
+        <location filename="../src/equipmenttab.cpp" line="65"/>
+        <source>CONFIRM</source>
+        <translation>確認</translation>
+    </message>
+    <message>
+        <location filename="../src/equipmenttab.cpp" line="66"/>
+        <source>ENCHANT_ALL_WARNING</source>
+        <translation>この操作はすべてのそうびの強化値をその上限値に設定します。
+ただし、「聖剣バンバラヤー」は上限値になりません。
+
+この機能は実験的なもので、セーブデータが破壊される可能性があります。</translation>
+    </message>
 </context>
 <context>
     <name>EquipmentTabForm</name>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="12"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="20"/>
         <source>GENERAL</source>
         <translation>基本</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="20"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="28"/>
         <source>NUM1</source>
         <translation>番号1</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="34"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="42"/>
         <source>NUM2</source>
         <translation>番号2</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="48"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="56"/>
         <source> TYPE</source>
         <translation>種類</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="65"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="73"/>
         <source>ENCHANTMENT</source>
         <translation>強化値</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="79"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="87"/>
         <source>SKILL1</source>
         <translation>スキル1</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="89"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="97"/>
         <source>SKILL2</source>
         <translation>スキル2</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="99"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="107"/>
         <source>QTY</source>
         <translation>個数</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="114"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="150"/>
+        <source>ENCHANT_ALL</source>
+        <translation>すべてのそうびを強化</translation>
+    </message>
+    <message>
         <source>FLAGS</source>
-        <translation>フラグ</translation>
+        <translation type="vanished">フラグ</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="120"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="127"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="134"/>
-        <source>7</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="141"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="148"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="155"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="162"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="169"/>
         <source>STACKABLE</source>
-        <translation>スタック可能</translation>
+        <translation type="vanished">スタック可能</translation>
     </message>
     <message>
         <source>QTY1</source>
@@ -441,33 +352,33 @@
 <context>
     <name>GashaLot</name>
     <message>
-        <location filename="../src/gashalot.cpp" line="114"/>
-        <location filename="../src/gashalot.cpp" line="213"/>
-        <location filename="../src/gashalot.cpp" line="239"/>
+        <location filename="../src/gashalot.cpp" line="112"/>
+        <location filename="../src/gashalot.cpp" line="211"/>
+        <location filename="../src/gashalot.cpp" line="237"/>
         <source>LOT1</source>
         <translation>粗品</translation>
     </message>
     <message>
-        <location filename="../src/gashalot.cpp" line="117"/>
-        <location filename="../src/gashalot.cpp" line="161"/>
-        <location filename="../src/gashalot.cpp" line="216"/>
-        <location filename="../src/gashalot.cpp" line="243"/>
+        <location filename="../src/gashalot.cpp" line="115"/>
+        <location filename="../src/gashalot.cpp" line="159"/>
+        <location filename="../src/gashalot.cpp" line="214"/>
+        <location filename="../src/gashalot.cpp" line="241"/>
         <source>LOT2</source>
         <translation>小当たり</translation>
     </message>
     <message>
-        <location filename="../src/gashalot.cpp" line="120"/>
-        <location filename="../src/gashalot.cpp" line="164"/>
-        <location filename="../src/gashalot.cpp" line="219"/>
-        <location filename="../src/gashalot.cpp" line="247"/>
+        <location filename="../src/gashalot.cpp" line="118"/>
+        <location filename="../src/gashalot.cpp" line="162"/>
+        <location filename="../src/gashalot.cpp" line="217"/>
+        <location filename="../src/gashalot.cpp" line="245"/>
         <source>LOT3</source>
         <translation>中当たり</translation>
     </message>
     <message>
-        <location filename="../src/gashalot.cpp" line="123"/>
-        <location filename="../src/gashalot.cpp" line="167"/>
-        <location filename="../src/gashalot.cpp" line="222"/>
-        <location filename="../src/gashalot.cpp" line="251"/>
+        <location filename="../src/gashalot.cpp" line="121"/>
+        <location filename="../src/gashalot.cpp" line="165"/>
+        <location filename="../src/gashalot.cpp" line="220"/>
+        <location filename="../src/gashalot.cpp" line="249"/>
         <source>LOT4</source>
         <translation>大当たり</translation>
     </message>
@@ -475,28 +386,28 @@
 <context>
     <name>GashaTab</name>
     <message>
-        <location filename="../src/gashatab.cpp" line="17"/>
+        <location filename="../src/gashatab.cpp" line="15"/>
         <source>NEXT_JAPAN</source>
         <translation>次の景品(日本)</translation>
     </message>
     <message>
-        <location filename="../src/gashatab.cpp" line="18"/>
+        <location filename="../src/gashatab.cpp" line="16"/>
         <source>NEXT_USA</source>
         <translation>次の景品(USA)</translation>
     </message>
     <message>
-        <location filename="../src/gashatab.cpp" line="19"/>
-        <location filename="../src/gashatab.cpp" line="45"/>
+        <location filename="../src/gashatab.cpp" line="17"/>
+        <location filename="../src/gashatab.cpp" line="43"/>
         <source>ADVANCE</source>
         <translation>進める</translation>
     </message>
     <message>
-        <location filename="../src/gashatab.cpp" line="27"/>
+        <location filename="../src/gashatab.cpp" line="25"/>
         <source>TERROR_TIME</source>
         <translation>鬼ガシャ</translation>
     </message>
     <message>
-        <location filename="../src/gashatab.cpp" line="29"/>
+        <location filename="../src/gashatab.cpp" line="27"/>
         <source>GAMECOIN</source>
         <translation>ゲームコイン</translation>
     </message>
@@ -580,69 +491,39 @@
 <context>
     <name>ImportantTabForm</name>
     <message>
-        <location filename="../src/ui/importanttabform.ui" line="20"/>
+        <location filename="../src/ui/importanttabform.ui" line="12"/>
         <source>GENERAL</source>
         <translation>基本</translation>
     </message>
     <message>
-        <location filename="../src/ui/importanttabform.ui" line="28"/>
+        <location filename="../src/ui/importanttabform.ui" line="20"/>
         <source>NUM1</source>
         <translation>番号1</translation>
     </message>
     <message>
-        <location filename="../src/ui/importanttabform.ui" line="42"/>
+        <location filename="../src/ui/importanttabform.ui" line="34"/>
         <source>NUM2</source>
         <translation>番号2</translation>
     </message>
     <message>
-        <location filename="../src/ui/importanttabform.ui" line="56"/>
+        <location filename="../src/ui/importanttabform.ui" line="48"/>
         <source>TYPE</source>
         <translation>種類</translation>
     </message>
     <message>
-        <location filename="../src/ui/importanttabform.ui" line="78"/>
+        <location filename="../src/ui/importanttabform.ui" line="65"/>
+        <source>QTY</source>
+        <translation>個数</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/importanttabform.ui" line="80"/>
         <source>FLAGS</source>
         <translation>フラグ</translation>
     </message>
     <message>
-        <location filename="../src/ui/importanttabform.ui" line="84"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="91"/>
+        <location filename="../src/ui/importanttabform.ui" line="135"/>
         <source>STACKABLE</source>
         <translation>スタック可能</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="98"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="105"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="112"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="119"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="126"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="133"/>
-        <source>7</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -734,49 +615,12 @@
         <translation>強化値</translation>
     </message>
     <message>
-        <location filename="../src/ui/itemtabform.ui" line="121"/>
         <source>FLAGS</source>
-        <translation>フラグ</translation>
+        <translation type="vanished">フラグ</translation>
     </message>
     <message>
-        <location filename="../src/ui/itemtabform.ui" line="127"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="134"/>
         <source>STACKABLE</source>
-        <translation>スタック可能</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="141"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="148"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="155"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="162"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="169"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="176"/>
-        <source>7</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">スタック可能</translation>
     </message>
     <message>
         <source>ALL_CREATURES</source>
@@ -803,51 +647,51 @@
         <translation>検索</translation>
     </message>
     <message>
-        <location filename="../src/ui/listtab.ui" line="78"/>
+        <location filename="../src/ui/listtab.ui" line="65"/>
         <source>AUTOMATIC_NUMBERING</source>
         <translation>自動付番</translation>
     </message>
     <message>
-        <location filename="../src/ui/listtab.ui" line="88"/>
+        <location filename="../src/ui/listtab.ui" line="75"/>
         <source>ADD_ALL</source>
         <translation>全ての項目を追加</translation>
     </message>
     <message>
-        <location filename="../src/ui/listtab.ui" line="98"/>
+        <location filename="../src/ui/listtab.ui" line="85"/>
         <source>CLEAR</source>
         <translation>削除</translation>
     </message>
     <message>
-        <location filename="../src/ui/listtab.ui" line="108"/>
+        <location filename="../src/ui/listtab.ui" line="95"/>
         <source>RESET</source>
         <translation>リセット</translation>
     </message>
     <message>
-        <location filename="../src/ui/listtab.ui" line="118"/>
+        <location filename="../src/ui/listtab.ui" line="105"/>
         <source>APPLY</source>
         <translation>適用</translation>
     </message>
     <message>
-        <location filename="../src/listtab.cpp" line="138"/>
-        <location filename="../src/listtab.cpp" line="157"/>
-        <location filename="../src/listtab.cpp" line="178"/>
+        <location filename="../src/listtab.cpp" line="136"/>
+        <location filename="../src/listtab.cpp" line="155"/>
+        <location filename="../src/listtab.cpp" line="176"/>
         <source>CONFIRM</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../src/listtab.cpp" line="139"/>
+        <location filename="../src/listtab.cpp" line="137"/>
         <source>AUTOMATIC_NUMBERING_WARNING</source>
         <translation>この操作は各項目の番号1と番号2を自動的に設定します．
 
 この機能は実験的なもので，セーブデータが破壊される可能性があります．</translation>
     </message>
     <message>
-        <location filename="../src/listtab.cpp" line="158"/>
+        <location filename="../src/listtab.cpp" line="156"/>
         <source>CLEAR_ENTRY_WARNING</source>
-        <translation type="unfinished">現在選択中のエントリを削除します。この操作は取り消せません。</translation>
+        <translation>現在選択中のエントリを削除します。この操作は取り消せません。</translation>
     </message>
     <message>
-        <location filename="../src/listtab.cpp" line="179"/>
+        <location filename="../src/listtab.cpp" line="177"/>
         <source>INSERT_ALL_ENTRIES_WARNING</source>
         <translation>この操作はすべての項目をリストに追加します。
 既存のデータは失われます。また、種類以外は設定しません。
@@ -938,23 +782,23 @@
         <translation>コードを適用</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="54"/>
+        <location filename="../src/mainwindow.cpp" line="52"/>
         <source>YOKAI</source>
         <translation>妖怪</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="45"/>
+        <location filename="../src/mainwindow.cpp" line="43"/>
         <source>ITEM</source>
         <translation>どうぐ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="43"/>
-        <location filename="../src/mainwindow.cpp" line="61"/>
+        <location filename="../src/mainwindow.cpp" line="41"/>
+        <location filename="../src/mainwindow.cpp" line="59"/>
         <source>BATTLE_ITEM</source>
         <translation>バトルアイテム</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="44"/>
+        <location filename="../src/mainwindow.cpp" line="42"/>
         <source>EQUIPMENT</source>
         <translation>そうび</translation>
     </message>
@@ -963,7 +807,7 @@
         <translation type="vanished">魂</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="46"/>
+        <location filename="../src/mainwindow.cpp" line="44"/>
         <source>IMPORTANT</source>
         <translation>だいじなもの</translation>
     </message>
@@ -980,32 +824,32 @@
         <translation type="vanished">だいじなもの(女)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="65"/>
+        <location filename="../src/mainwindow.cpp" line="63"/>
         <source>MEDALLIUM</source>
         <translation>妖怪大辞典</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="55"/>
+        <location filename="../src/mainwindow.cpp" line="53"/>
         <source>INFO1</source>
         <translation>情報1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="59"/>
+        <location filename="../src/mainwindow.cpp" line="57"/>
         <source>ITEMBOX</source>
         <translation>アイテムボックス</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="62"/>
+        <location filename="../src/mainwindow.cpp" line="60"/>
         <source>WEAPON</source>
         <translation>武器</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="63"/>
+        <location filename="../src/mainwindow.cpp" line="61"/>
         <source>PROTECTOR</source>
         <translation>防具</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="67"/>
+        <location filename="../src/mainwindow.cpp" line="65"/>
         <source>INFO2</source>
         <translation>情報2</translation>
     </message>
@@ -1058,32 +902,32 @@
         <translation type="vanished">バスターズT</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="123"/>
-        <location filename="../src/mainwindow.cpp" line="139"/>
-        <location filename="../src/mainwindow.cpp" line="159"/>
+        <location filename="../src/mainwindow.cpp" line="121"/>
+        <location filename="../src/mainwindow.cpp" line="137"/>
+        <location filename="../src/mainwindow.cpp" line="157"/>
         <source>ERROR</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="123"/>
-        <location filename="../src/mainwindow.cpp" line="139"/>
+        <location filename="../src/mainwindow.cpp" line="121"/>
+        <location filename="../src/mainwindow.cpp" line="137"/>
         <source>ERROR (%1)</source>
         <translation>エラー (%1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="159"/>
+        <location filename="../src/mainwindow.cpp" line="157"/>
         <source>ERROR (%1-%2)</source>
         <translation>エラー (%1-%2)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="179"/>
-        <location filename="../src/mainwindow.cpp" line="198"/>
+        <location filename="../src/mainwindow.cpp" line="177"/>
+        <location filename="../src/mainwindow.cpp" line="196"/>
         <source>YO-KAI_WATCH_SAVEDATA (*.yw)</source>
         <translation>妖怪ウォッチ セーブデータ (*.yw)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="181"/>
-        <location filename="../src/mainwindow.cpp" line="200"/>
+        <location filename="../src/mainwindow.cpp" line="179"/>
+        <location filename="../src/mainwindow.cpp" line="198"/>
         <source>YO-KAI_WATCH_DECRYPTED_SAVEDATA (*.ywd *.yw)</source>
         <translation>妖怪ウォッチ 復号済みセーブデータ (*.ywd *.yw)</translation>
     </message>
@@ -1092,12 +936,12 @@
         <translation type="vanished">妖怪ウォッチ 復号済みセーブデータ (*.ywd)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="183"/>
+        <location filename="../src/mainwindow.cpp" line="181"/>
         <source>SELECT_FILE_TO_OPEN</source>
         <translation>開くファイルを選択</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="202"/>
+        <location filename="../src/mainwindow.cpp" line="200"/>
         <source>INPUT_FILENAME</source>
         <translation>保存するファイル名を入力</translation>
     </message>
@@ -1205,12 +1049,12 @@
         <translation>適用</translation>
     </message>
     <message>
-        <location filename="../src/section1tab.cpp" line="28"/>
+        <location filename="../src/section1tab.cpp" line="26"/>
         <source>CONFIRM</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../src/section1tab.cpp" line="29"/>
+        <location filename="../src/section1tab.cpp" line="27"/>
         <source>RESET_LEGENDARY_WARNING</source>
         <translation>レジェンド妖怪を再度解放できるようにします．この操作は取り消せません．</translation>
     </message>
@@ -1542,14 +1386,14 @@
         <translation type="vanished">適用</translation>
     </message>
     <message>
-        <location filename="../src/youkaitab.cpp" line="96"/>
-        <location filename="../src/youkaitab.cpp" line="111"/>
-        <location filename="../src/youkaitab.cpp" line="129"/>
+        <location filename="../src/youkaitab.cpp" line="94"/>
+        <location filename="../src/youkaitab.cpp" line="109"/>
+        <location filename="../src/youkaitab.cpp" line="127"/>
         <source>CONFIRM</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../src/youkaitab.cpp" line="97"/>
+        <location filename="../src/youkaitab.cpp" line="95"/>
         <source>UPDATE_INDEX_WARNING</source>
         <translation>この操作はセクション10にある妖怪リストを更新します．
 追加した妖怪がゲームで表示されない場合に使用してください．
@@ -1570,14 +1414,14 @@
 この機能は実験的なもので，セーブデータが破壊される可能性があります．</translation>
     </message>
     <message>
-        <location filename="../src/youkaitab.cpp" line="112"/>
+        <location filename="../src/youkaitab.cpp" line="110"/>
         <source>UPDATE_ID_WARNING</source>
         <translation>この操作は全ての妖怪のIDを，自分のIDと同じものに設定します．
 
 この機能は実験的なもので，セーブデータが破壊される可能性があります．</translation>
     </message>
     <message>
-        <location filename="../src/youkaitab.cpp" line="130"/>
+        <location filename="../src/youkaitab.cpp" line="128"/>
         <source>FIX_IV_WARNING</source>
         <translation>個体値が不正な妖怪の個体値を修正します．
 新たな個体値はランダムで決定されます．

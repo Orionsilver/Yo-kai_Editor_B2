@@ -4,73 +4,38 @@
 <context>
     <name>BattleItemTabForm</name>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="12"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="20"/>
         <source>GENERAL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="20"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="28"/>
         <source>NUM1</source>
         <translation type="unfinished">#1</translation>
     </message>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="34"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="42"/>
         <source>NUM2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="48"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="56"/>
         <source>TYPE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="65"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="73"/>
         <source>QTY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="84"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="92"/>
         <source>FLAGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="90"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="97"/>
+        <location filename="../src/ui/battleitemtabform.ui" line="147"/>
         <source>STACKABLE</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="104"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="111"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="118"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="125"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="132"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/battleitemtabform.ui" line="139"/>
-        <source>7</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -211,73 +176,38 @@ Because this is an experimental feature, your save data may get corrupted. Conti
 <context>
     <name>ConsumeTabForm</name>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="12"/>
+        <location filename="../src/ui/consumetabform.ui" line="20"/>
         <source>GENERAL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="20"/>
+        <location filename="../src/ui/consumetabform.ui" line="28"/>
         <source>NUM1</source>
         <translation type="unfinished">#1</translation>
     </message>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="34"/>
+        <location filename="../src/ui/consumetabform.ui" line="42"/>
         <source>NUM2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="48"/>
+        <location filename="../src/ui/consumetabform.ui" line="56"/>
         <source>TYPE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="65"/>
+        <location filename="../src/ui/consumetabform.ui" line="73"/>
         <source>QTY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="84"/>
+        <location filename="../src/ui/consumetabform.ui" line="92"/>
         <source>FLAGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/consumetabform.ui" line="90"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="97"/>
+        <location filename="../src/ui/consumetabform.ui" line="147"/>
         <source>STACKABLE</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="104"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="111"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="118"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="125"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="132"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/consumetabform.ui" line="139"/>
-        <source>7</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -337,92 +267,62 @@ Because this is an experimental feature, your save data may get corrupted. Conti
         <source>UNKNOWN</source>
         <translation type="vanished">(???)</translation>
     </message>
+    <message>
+        <location filename="../src/equipmenttab.cpp" line="65"/>
+        <source>CONFIRM</source>
+        <translation type="unfinished">Confirmation</translation>
+    </message>
+    <message>
+        <location filename="../src/equipmenttab.cpp" line="66"/>
+        <source>ENCHANT_ALL_WARNING</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>EquipmentTabForm</name>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="12"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="20"/>
         <source>GENERAL</source>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="20"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="28"/>
         <source>NUM1</source>
         <translation>#1</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="34"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="42"/>
         <source>NUM2</source>
         <translation>#2</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="48"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="56"/>
         <source> TYPE</source>
         <translation>Type</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="65"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="73"/>
         <source>ENCHANTMENT</source>
         <translation type="unfinished">Enchantment value</translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="79"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="87"/>
         <source>SKILL1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="89"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="97"/>
         <source>SKILL2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="99"/>
+        <location filename="../src/ui/equipmenttabform.ui" line="107"/>
         <source>QTY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="114"/>
-        <source>FLAGS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="120"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="127"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="134"/>
-        <source>7</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="141"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="148"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="155"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="162"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/equipmenttabform.ui" line="169"/>
-        <source>STACKABLE</source>
+        <location filename="../src/ui/equipmenttabform.ui" line="150"/>
+        <source>ENCHANT_ALL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -437,33 +337,33 @@ Because this is an experimental feature, your save data may get corrupted. Conti
 <context>
     <name>GashaLot</name>
     <message>
-        <location filename="../src/gashalot.cpp" line="114"/>
-        <location filename="../src/gashalot.cpp" line="213"/>
-        <location filename="../src/gashalot.cpp" line="239"/>
+        <location filename="../src/gashalot.cpp" line="112"/>
+        <location filename="../src/gashalot.cpp" line="211"/>
+        <location filename="../src/gashalot.cpp" line="237"/>
         <source>LOT1</source>
         <translation>Bad prize</translation>
     </message>
     <message>
-        <location filename="../src/gashalot.cpp" line="117"/>
-        <location filename="../src/gashalot.cpp" line="161"/>
-        <location filename="../src/gashalot.cpp" line="216"/>
-        <location filename="../src/gashalot.cpp" line="243"/>
+        <location filename="../src/gashalot.cpp" line="115"/>
+        <location filename="../src/gashalot.cpp" line="159"/>
+        <location filename="../src/gashalot.cpp" line="214"/>
+        <location filename="../src/gashalot.cpp" line="241"/>
         <source>LOT2</source>
         <translation>Small prize</translation>
     </message>
     <message>
-        <location filename="../src/gashalot.cpp" line="120"/>
-        <location filename="../src/gashalot.cpp" line="164"/>
-        <location filename="../src/gashalot.cpp" line="219"/>
-        <location filename="../src/gashalot.cpp" line="247"/>
+        <location filename="../src/gashalot.cpp" line="118"/>
+        <location filename="../src/gashalot.cpp" line="162"/>
+        <location filename="../src/gashalot.cpp" line="217"/>
+        <location filename="../src/gashalot.cpp" line="245"/>
         <source>LOT3</source>
         <translation>Medium prize</translation>
     </message>
     <message>
-        <location filename="../src/gashalot.cpp" line="123"/>
-        <location filename="../src/gashalot.cpp" line="167"/>
-        <location filename="../src/gashalot.cpp" line="222"/>
-        <location filename="../src/gashalot.cpp" line="251"/>
+        <location filename="../src/gashalot.cpp" line="121"/>
+        <location filename="../src/gashalot.cpp" line="165"/>
+        <location filename="../src/gashalot.cpp" line="220"/>
+        <location filename="../src/gashalot.cpp" line="249"/>
         <source>LOT4</source>
         <translation>Jackpot</translation>
     </message>
@@ -471,28 +371,28 @@ Because this is an experimental feature, your save data may get corrupted. Conti
 <context>
     <name>GashaTab</name>
     <message>
-        <location filename="../src/gashatab.cpp" line="17"/>
+        <location filename="../src/gashatab.cpp" line="15"/>
         <source>NEXT_JAPAN</source>
         <translation>Next prizes (Japan)</translation>
     </message>
     <message>
-        <location filename="../src/gashatab.cpp" line="18"/>
+        <location filename="../src/gashatab.cpp" line="16"/>
         <source>NEXT_USA</source>
         <translation>Next prizes (USA)</translation>
     </message>
     <message>
-        <location filename="../src/gashatab.cpp" line="19"/>
-        <location filename="../src/gashatab.cpp" line="45"/>
+        <location filename="../src/gashatab.cpp" line="17"/>
+        <location filename="../src/gashatab.cpp" line="43"/>
         <source>ADVANCE</source>
         <translation>Advance</translation>
     </message>
     <message>
-        <location filename="../src/gashatab.cpp" line="27"/>
+        <location filename="../src/gashatab.cpp" line="25"/>
         <source>TERROR_TIME</source>
         <translation>Oni Crank-a-kai</translation>
     </message>
     <message>
-        <location filename="../src/gashatab.cpp" line="29"/>
+        <location filename="../src/gashatab.cpp" line="27"/>
         <source>GAMECOIN</source>
         <translation>Play Coins</translation>
     </message>
@@ -576,68 +476,38 @@ Because this is an experimental feature, your save data may get corrupted. Conti
 <context>
     <name>ImportantTabForm</name>
     <message>
-        <location filename="../src/ui/importanttabform.ui" line="20"/>
+        <location filename="../src/ui/importanttabform.ui" line="12"/>
         <source>GENERAL</source>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../src/ui/importanttabform.ui" line="28"/>
+        <location filename="../src/ui/importanttabform.ui" line="20"/>
         <source>NUM1</source>
         <translation>#1</translation>
     </message>
     <message>
-        <location filename="../src/ui/importanttabform.ui" line="42"/>
+        <location filename="../src/ui/importanttabform.ui" line="34"/>
         <source>NUM2</source>
         <translation>#2</translation>
     </message>
     <message>
-        <location filename="../src/ui/importanttabform.ui" line="56"/>
+        <location filename="../src/ui/importanttabform.ui" line="48"/>
         <source>TYPE</source>
         <translation>Type</translation>
     </message>
     <message>
-        <location filename="../src/ui/importanttabform.ui" line="78"/>
+        <location filename="../src/ui/importanttabform.ui" line="65"/>
+        <source>QTY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/importanttabform.ui" line="80"/>
         <source>FLAGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/importanttabform.ui" line="84"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="91"/>
+        <location filename="../src/ui/importanttabform.ui" line="135"/>
         <source>STACKABLE</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="98"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="105"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="112"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="119"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="126"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/importanttabform.ui" line="133"/>
-        <source>7</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -730,51 +600,6 @@ Because this is an experimental feature, your save data may get corrupted. Conti
         <translation type="unfinished">Enchantment value</translation>
     </message>
     <message>
-        <location filename="../src/ui/itemtabform.ui" line="121"/>
-        <source>FLAGS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="127"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="134"/>
-        <source>STACKABLE</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="141"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="148"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="155"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="162"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="169"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/itemtabform.ui" line="176"/>
-        <source>7</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>ALL_CREATURES</source>
         <translation type="vanished">Add all bugs/fish</translation>
     </message>
@@ -799,51 +624,51 @@ Because this is an experimental feature, your save data may get corrupted. Conti
         <translation>Search...</translation>
     </message>
     <message>
-        <location filename="../src/ui/listtab.ui" line="78"/>
+        <location filename="../src/ui/listtab.ui" line="65"/>
         <source>AUTOMATIC_NUMBERING</source>
         <translation>Auto-number</translation>
     </message>
     <message>
-        <location filename="../src/ui/listtab.ui" line="88"/>
+        <location filename="../src/ui/listtab.ui" line="75"/>
         <source>ADD_ALL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/listtab.ui" line="98"/>
+        <location filename="../src/ui/listtab.ui" line="85"/>
         <source>CLEAR</source>
         <translation>Clear</translation>
     </message>
     <message>
-        <location filename="../src/ui/listtab.ui" line="108"/>
+        <location filename="../src/ui/listtab.ui" line="95"/>
         <source>RESET</source>
         <translation>Reset</translation>
     </message>
     <message>
-        <location filename="../src/ui/listtab.ui" line="118"/>
+        <location filename="../src/ui/listtab.ui" line="105"/>
         <source>APPLY</source>
         <translation>Apply</translation>
     </message>
     <message>
-        <location filename="../src/listtab.cpp" line="138"/>
-        <location filename="../src/listtab.cpp" line="157"/>
-        <location filename="../src/listtab.cpp" line="178"/>
+        <location filename="../src/listtab.cpp" line="136"/>
+        <location filename="../src/listtab.cpp" line="155"/>
+        <location filename="../src/listtab.cpp" line="176"/>
         <source>CONFIRM</source>
         <translation>Confirmation</translation>
     </message>
     <message>
-        <location filename="../src/listtab.cpp" line="139"/>
+        <location filename="../src/listtab.cpp" line="137"/>
         <source>AUTOMATIC_NUMBERING_WARNING</source>
         <translation>This action will automatically assign the #1 and #2 values of each entry.
 
 Because this is an experimental feature, your save data may get corrupted. Continue?</translation>
     </message>
     <message>
-        <location filename="../src/listtab.cpp" line="158"/>
+        <location filename="../src/listtab.cpp" line="156"/>
         <source>CLEAR_ENTRY_WARNING</source>
         <translation>The current entry will be cleared. This action can&apos;t be undone.</translation>
     </message>
     <message>
-        <location filename="../src/listtab.cpp" line="179"/>
+        <location filename="../src/listtab.cpp" line="177"/>
         <source>INSERT_ALL_ENTRIES_WARNING</source>
         <translation type="unfinished"></translation>
     </message>
@@ -931,23 +756,23 @@ Because this is an experimental feature, your save data may get corrupted. Conti
         <translation>Apply cheat code</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="54"/>
+        <location filename="../src/mainwindow.cpp" line="52"/>
         <source>YOKAI</source>
         <translation>Yo-kai</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="45"/>
+        <location filename="../src/mainwindow.cpp" line="43"/>
         <source>ITEM</source>
         <translation>Items</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="43"/>
-        <location filename="../src/mainwindow.cpp" line="61"/>
+        <location filename="../src/mainwindow.cpp" line="41"/>
+        <location filename="../src/mainwindow.cpp" line="59"/>
         <source>BATTLE_ITEM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="44"/>
+        <location filename="../src/mainwindow.cpp" line="42"/>
         <source>EQUIPMENT</source>
         <translation>Equipment</translation>
     </message>
@@ -956,7 +781,7 @@ Because this is an experimental feature, your save data may get corrupted. Conti
         <translation type="vanished">Soul Orbs</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="46"/>
+        <location filename="../src/mainwindow.cpp" line="44"/>
         <source>IMPORTANT</source>
         <translation>Key Items</translation>
     </message>
@@ -973,32 +798,32 @@ Because this is an experimental feature, your save data may get corrupted. Conti
         <translation type="vanished">だいじなもの(女)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="65"/>
+        <location filename="../src/mainwindow.cpp" line="63"/>
         <source>MEDALLIUM</source>
         <translation>Yo-kai Medallium</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="55"/>
+        <location filename="../src/mainwindow.cpp" line="53"/>
         <source>INFO1</source>
         <translation>Info 1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="59"/>
+        <location filename="../src/mainwindow.cpp" line="57"/>
         <source>ITEMBOX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="62"/>
+        <location filename="../src/mainwindow.cpp" line="60"/>
         <source>WEAPON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="63"/>
+        <location filename="../src/mainwindow.cpp" line="61"/>
         <source>PROTECTOR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="67"/>
+        <location filename="../src/mainwindow.cpp" line="65"/>
         <source>INFO2</source>
         <translation>Info 2</translation>
     </message>
@@ -1051,32 +876,32 @@ Because this is an experimental feature, your save data may get corrupted. Conti
         <translation type="vanished">Busters T</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="123"/>
-        <location filename="../src/mainwindow.cpp" line="139"/>
-        <location filename="../src/mainwindow.cpp" line="159"/>
+        <location filename="../src/mainwindow.cpp" line="121"/>
+        <location filename="../src/mainwindow.cpp" line="137"/>
+        <location filename="../src/mainwindow.cpp" line="157"/>
         <source>ERROR</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="123"/>
-        <location filename="../src/mainwindow.cpp" line="139"/>
+        <location filename="../src/mainwindow.cpp" line="121"/>
+        <location filename="../src/mainwindow.cpp" line="137"/>
         <source>ERROR (%1)</source>
         <translation>Error (%1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="159"/>
+        <location filename="../src/mainwindow.cpp" line="157"/>
         <source>ERROR (%1-%2)</source>
         <translation>Error (%1-%2)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="179"/>
-        <location filename="../src/mainwindow.cpp" line="198"/>
+        <location filename="../src/mainwindow.cpp" line="177"/>
+        <location filename="../src/mainwindow.cpp" line="196"/>
         <source>YO-KAI_WATCH_SAVEDATA (*.yw)</source>
         <translation>Yo-kai Watch save data (*.yw)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="181"/>
-        <location filename="../src/mainwindow.cpp" line="200"/>
+        <location filename="../src/mainwindow.cpp" line="179"/>
+        <location filename="../src/mainwindow.cpp" line="198"/>
         <source>YO-KAI_WATCH_DECRYPTED_SAVEDATA (*.ywd *.yw)</source>
         <translation>Decrypted Yo-kai Watch data (*.ywd, *.yw)</translation>
     </message>
@@ -1085,12 +910,12 @@ Because this is an experimental feature, your save data may get corrupted. Conti
         <translation type="vanished">妖怪ウォッチ 復号済みセーブデータ (*.ywd)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="183"/>
+        <location filename="../src/mainwindow.cpp" line="181"/>
         <source>SELECT_FILE_TO_OPEN</source>
         <translation>Select a file to open</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="202"/>
+        <location filename="../src/mainwindow.cpp" line="200"/>
         <source>INPUT_FILENAME</source>
         <translation>Enter a filename to save as</translation>
     </message>
@@ -1198,12 +1023,12 @@ Because this is an experimental feature, your save data may get corrupted. Conti
         <translation>Apply</translation>
     </message>
     <message>
-        <location filename="../src/section1tab.cpp" line="28"/>
+        <location filename="../src/section1tab.cpp" line="26"/>
         <source>CONFIRM</source>
         <translation>Confirmation</translation>
     </message>
     <message>
-        <location filename="../src/section1tab.cpp" line="29"/>
+        <location filename="../src/section1tab.cpp" line="27"/>
         <source>RESET_LEGENDARY_WARNING</source>
         <translation>This action will allow you to re-summon Legendary Yo-kai you have unlocked. This action can&apos;t be undone. Continue?</translation>
     </message>
@@ -1535,14 +1360,14 @@ Because this is an experimental feature, your save data may get corrupted. Conti
         <translation type="vanished">適用</translation>
     </message>
     <message>
-        <location filename="../src/youkaitab.cpp" line="96"/>
-        <location filename="../src/youkaitab.cpp" line="111"/>
-        <location filename="../src/youkaitab.cpp" line="129"/>
+        <location filename="../src/youkaitab.cpp" line="94"/>
+        <location filename="../src/youkaitab.cpp" line="109"/>
+        <location filename="../src/youkaitab.cpp" line="127"/>
         <source>CONFIRM</source>
         <translation>Confirmation</translation>
     </message>
     <message>
-        <location filename="../src/youkaitab.cpp" line="97"/>
+        <location filename="../src/youkaitab.cpp" line="95"/>
         <source>UPDATE_INDEX_WARNING</source>
         <translation>This action will update the Yo-kai list in section 10.
 Please use this if Yo-kai you have added do not appear in the game.
@@ -1563,14 +1388,14 @@ Because this is an experimental feature, your save data may get corrupted. Conti
 この機能は実験的なもので，セーブデータが破壊される可能性があります．</translation>
     </message>
     <message>
-        <location filename="../src/youkaitab.cpp" line="112"/>
+        <location filename="../src/youkaitab.cpp" line="110"/>
         <source>UPDATE_ID_WARNING</source>
         <translation>This action will set the ID of all your Yo-kai to your own.
 
 Because this is an experimental feature, your save data may get corrupted. Continue?</translation>
     </message>
     <message>
-        <location filename="../src/youkaitab.cpp" line="130"/>
+        <location filename="../src/youkaitab.cpp" line="128"/>
         <source>FIX_IV_WARNING</source>
         <translation>This action will modify the IVs of Yo-kai whose IVs are illegal.
 The new IVs will be randomly generated.
