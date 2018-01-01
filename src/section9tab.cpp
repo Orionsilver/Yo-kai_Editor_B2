@@ -18,7 +18,9 @@ Section9Tab::~Section9Tab()
 void Section9Tab::update()
 {
     quint32 money = this->read<quint32>(0x0);
+    quint32 jewel = this->read<quint32>(0xC);
     ui->moneyCB->setValue(money);
+    ui->jewelCB->setValue(jewel);
     ui->applyButton->setEnabled(true);
     ui->resetButton->setEnabled(true);
 }
@@ -26,4 +28,5 @@ void Section9Tab::update()
 void Section9Tab::apply()
 {
     this->write<quint32>(ui->moneyCB->value(), 0x00); // money
+    this->write<quint32>(ui->jewelCB->value(), 0x0C); // jewel
 }
