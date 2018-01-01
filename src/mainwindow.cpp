@@ -47,6 +47,7 @@ MainWindow::MainWindow(QWidget* parent)
     EquipmentTab* et = new EquipmentTab(this->mgr, 0x5000, GameConfig::EquipmentCountMax, this, 0x26);
     EquipmentTab* e2t = new EquipmentTab(this->mgr, 0x6000, GameConfig::EquipmentCountMax, this, 0x30);
     MedaliumTab* mt = new MedaliumTab(this->mgr, this, 0x01, 0x774);
+    HiddenTreasureTab* ht = new HiddenTreasureTab(this->mgr, this, 0x32);
     Section9Tab* s9t = new Section9Tab(this->mgr, this, 0x09);
 
     this->ui->tabWidget->addTab(yt, tr("YOKAI"));
@@ -61,7 +62,7 @@ MainWindow::MainWindow(QWidget* parent)
     this->ui->tabWidget->addTab(e2t, tr("PROTECTOR"));
     //    this->ui->tabWidget->addTab(imt, tr("IMPORTANT"));
     this->ui->tabWidget->addTab(mt, tr("MEDALLIUM"));
-    //    this->ui->tabWidget->addTab(ht, tr("HACKSLASH_BATTLE"));
+    this->ui->tabWidget->addTab(ht, tr("HIDDEN_TREASURE"));
     this->ui->tabWidget->addTab(s9t, tr("INFO2"));
 
     this->sectionTabs.append(yt);
@@ -76,7 +77,7 @@ MainWindow::MainWindow(QWidget* parent)
     this->sectionTabs.append(e2t);
     //    this->sectionTabs.append(imt);
     this->sectionTabs.append(mt);
-    //    this->sectionTabs.append(ht);
+    this->sectionTabs.append(ht);
     this->sectionTabs.append(s1t);
     this->sectionTabs.append(s9t);
     //    this->sectionTabs.append(s242t);

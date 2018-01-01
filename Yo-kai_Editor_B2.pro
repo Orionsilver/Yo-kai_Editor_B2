@@ -64,7 +64,8 @@ SOURCES += src/main.cpp\
     src/dataeditor/hexintegereditor.cpp \
     src/gashastate.cpp \
     src/battleitemtab.cpp \
-    src/consumetab.cpp
+    src/consumetab.cpp \
+    src/hiddentreasuretab.cpp
 
 HEADERS  += src/mainwindow.h \
     src/version.h \
@@ -113,7 +114,8 @@ HEADERS  += src/mainwindow.h \
     src/dataeditor/hexintegereditor.h \
     src/gashastate.h \
     src/battleitemtab.h \
-    src/consumetab.h
+    src/consumetab.h \
+    src/hiddentreasuretab.h
 
 FORMS    += src/ui/mainwindow.ui \
     src/ui/version_dialog.ui \
@@ -130,7 +132,8 @@ FORMS    += src/ui/mainwindow.ui \
     src/ui/gashatab.ui \
     src/ui/cheatcodedialog.ui \
     src/ui/battleitemtabform.ui \
-    src/ui/consumetabform.ui
+    src/ui/consumetabform.ui \
+    src/ui/hiddentreasuretabform.ui
 
 TRANSLATIONS = $$PWD/translations/app_ja.ts \
 $$PWD/translations/app_en.ts

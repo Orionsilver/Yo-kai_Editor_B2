@@ -7,6 +7,7 @@
 #include "equipmenttab.h"
 #include "error.h"
 #include "gashatab.h"
+#include "hiddentreasuretab.h"
 #include "importanttab.h"
 #include "itemtab.h"
 #include "manualeditdialog.h"

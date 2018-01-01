@@ -13,6 +13,7 @@ public:
     static const int BattleItemCountMax = 9;
     static const int EquipmentCountMax = 4;
     static const int ImportantCountMax = 240;
+    static const int HiddenTreasureCountMax = 16;
 
     // The following values are determined for the sake of convenience.
     // They aren't based on the size of the section, unlike others.
