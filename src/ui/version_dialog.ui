@@ -58,7 +58,7 @@
          <item>
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string notr="true">Copyright (c) 2017 togenyan</string>
+            <string notr="true">Copyright (c) 2017-2018 togenyan</string>
            </property>
           </widget>
          </item>
